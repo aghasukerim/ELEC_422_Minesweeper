@@ -15,7 +15,8 @@ wire [3:0] out_state_main;
 wire out_start, out_place_done, out_load, out_decode, out_decode_done;
 wire [8:0] out_mines;
 wire [3:0] out_temp_data_in;
-wire out_alu, out_alu_done, out_gameover;
+wire out_alu, out_alu_done, out_gameover, out_win;
+wire [31:0] out_global_score;
 wire [8:0] out_temp_decoded;
 wire [8:0] out_temp_cleared;
 
@@ -38,6 +39,8 @@ top_module top (.in_clka (in_clka),
 	       .out_alu (out_alu),
 	       .out_alu_done (out_alu_done),
 	       .out_gameover (out_gameover),
+		   .out_win (out_win),
+		   .out_global_score (out_global_score),
 	       .out_temp_decoded (out_temp_decoded),
 	       .out_temp_cleared (out_temp_cleared)
           );

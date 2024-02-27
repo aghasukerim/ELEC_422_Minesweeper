@@ -5,15 +5,17 @@
 //-----------------------------------------------------
 //
 //
-module dp (clka, clkb, restart, start, place_done, mines, load, data, temp_data_in, decode, decode_done, alu, alu_done, gameover, temp_decoded, temp_cleared);
+module dp (clka, clkb, restart, start, place_done, mines, load, data, temp_data_in, decode, decode_done, alu, alu_done, gameover, win, global_score, temp_decoded, temp_cleared);
 //-----------Input Ports---------------
 input clka, clkb, restart, start, load, decode, alu;
 input [4:0] data;
 //-----------Output Ports---------------
-output place_done, mines, decode_done, alu_done, gameover;
+output place_done, decode_done, alu_done, gameover, win;
+output [24:0] mines;
 output [4:0] temp_data_in;
 output [24:0] temp_decoded;
 output [24:0] temp_cleared;
+output [31:0] global_score;
 //------------Internal Variables--------
 reg     place_done;
 reg     [24:0] mines; // mine positions
@@ -21,7 +23,9 @@ reg     [4:0] temp_data_in; // encoded user input
 reg     decode_done;
 reg     [24:0] temp_decoded; // decoded user input
 reg     [24:0] temp_cleared; // cleared cells
+reg     [31:0] global_score; //track number of total wins
 reg     gameover; // did we explode a mine?
+reg     win; // calculate if user has won
 reg     alu_done;
 
 //-------------Code Starts Here---------
@@ -34,6 +38,8 @@ if (restart == 1'b1) begin
         temp_decoded = 0;
         temp_cleared = 0;
         gameover = 0;
+        win = 0;
+        global_score = 0;
    end else if (start) begin
         // TODO: call the RNG placement for mines
         mines = 24'b001010001000000000000000;
@@ -43,7 +49,7 @@ if (restart == 1'b1) begin
         if (temp_data_in < 25) begin                   // if input data is valid
                temp_decoded = 1'b1 << temp_data_in;    // set bit at index of input data
           else begin
-               temp_decoded = 25'b0                    // error; default case
+               temp_decoded = 25'b0;                    // error; default case
           end
         end
    end else if (alu) begin
@@ -51,6 +57,11 @@ if (restart == 1'b1) begin
         temp_cleared = temp_cleared | temp_decoded;
         // perform 'bitwise-and' to see if a mine exploded (maybe use &&?)
         gameover = (mines & temp_decoded == 0); // weird here: it should be mines & temp_decoded != 0 but it's complemented
+        win = (mines == ~temp_cleared); //check that all non-mine positions have been cleared
+        if (win) begin
+             global_score = global_score + 1;
+             gameover = 1; //if you win, also gameover
+        end
    end
 end
 

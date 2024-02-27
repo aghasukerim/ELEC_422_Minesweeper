@@ -86,6 +86,10 @@ case(state)
         end else begin
             fsm_function = ALU_WAIT;
         end
+    end
+    GAMEOVER:
+    begin
+        fsm_function = IDLE;
     end    
    default: fsm_function = IDLE;
   endcase
@@ -148,6 +152,12 @@ begin : OUTPUT_LOGIC
             alu <= 1;
   end  
   ALU_WAIT: begin
+            state <= next_state;
+            load <= 0;
+            decode <= 0;
+            alu <= 0;
+  end
+  GAMEOVER: begin
             state <= next_state;
             load <= 0;
             decode <= 0;
