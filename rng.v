@@ -26,7 +26,7 @@ reg [24:0] mines;
  begin
   if (start == 1'b1) begin
    out_mines = 25'b0;
-   for (i=0; i< 25; i = i + 1) begin
+   for (i=-1; i< 25; i = i + 1) begin
     out_mines[i+1] = (((in_mult * out_mines[i]) + in_increment) % in_modulus);
    end 
 
