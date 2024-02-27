@@ -4,7 +4,7 @@
 //
 // Function    : Pseudo-Random Number Generator to compute placement of mines
 //-----------------------------------------------------
-module top_module (in_clka, in_start, in_mult, in_increment, in_modulus, out_mines);
+module rng (in_clka, in_start, in_mult, in_increment, in_modulus, out_mines);
 //-------------Input Ports-----------------------------
 input   in_clka, in_start;
  input    in_mult;
