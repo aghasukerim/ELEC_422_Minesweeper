@@ -4,7 +4,7 @@
 //
 // Function    : Pseudo-Random Number Generator to compute placement of mines
 //-----------------------------------------------------
-module top_module (in_clka, in_start, in_mult, in_increment, in_modulus, out_mines);
+module rng (in_clka, in_start, in_mult, in_increment, in_modulus, out_mines);
 //-------------Input Ports-----------------------------
 input   in_clka, in_start;
  input    in_mult;
@@ -26,8 +26,12 @@ reg [24:0] mines;
  begin
   if (start == 1'b1) begin
    out_mines = 25'b0;
-   for (i=0; i< 25; i = i + 1) begin
-    out_mines[i+1] = (((in_mult * out_mines[i]) + in_increment) % in_modulus);
+   for (i=-1; i< 25; i = i + 1) begin
+    if (i == -1) begin
+     out_mines[0] = (((in_mult) + in_increment) % in_modulus);
+    end else begin
+     out_mines[i+1] = (((in_mult * out_mines[i]) + in_increment) % in_modulus);
+    end
    end 
 
   end
