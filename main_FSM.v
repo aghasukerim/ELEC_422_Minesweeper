@@ -7,7 +7,7 @@
 module main_FSM (clka, clkb, restart, state, place, start, place_done, data_in, data, load, decode, decode_done, alu, alu_done, gameover);
 //-------------Input Ports-----------------------------
 input   clka, clkb, restart, place, place_done, data_in, decode_done, alu_done, gameover;
-input [3:0] data;
+input [4:0] data;
 //-------------Output Ports----------------------------
 output  state, start, load, decode, alu;
 //-------------Input ports Data Type-------------------
