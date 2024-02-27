@@ -12,7 +12,7 @@ module top_module (in_clka, in_clkb, in_restart, out_state_main, in_place, in_da
 input   in_clka, in_clkb, in_restart, in_place, in_data_in;
 input   [4:0] in_data;
 //-------------Output Ports----------------------------
-output  [2:0] out_state_main; 
+output  [3:0] out_state_main; 
 output  out_start, out_place_done, out_mines, out_load, out_temp_data_in, out_decode, out_decode_done;
 output  out_alu, out_alu_done, out_gameover, out_win;
 output [31:0] out_global_score;
