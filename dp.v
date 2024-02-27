@@ -5,7 +5,7 @@
 //-----------------------------------------------------
 //
 //
-module dp (clka, clkb, restart, start, place_done, mines, load, data, temp_data_in, decode, decode_done, alu, alu_done, gameover, win, global_score, temp_decoded, temp_cleared);
+module dp (clka, clkb, restart, start, place_done, mines, load, data, temp_data_in, decode, decode_done, alu, alu_done, gameover, win, global_score, n_nearby, temp_decoded, temp_cleared);
 //-----------Input Ports---------------
 input clka, clkb, restart, start, load, decode, alu;
 input [4:0] data;
@@ -16,6 +16,7 @@ output [4:0] temp_data_in;
 output [24:0] temp_decoded;
 output [24:0] temp_cleared;
 output [31:0] global_score;
+output [1:0] n_nearby;
 //------------Internal Variables--------
 reg     place_done;
 reg     [24:0] mines; // mine positions
@@ -24,6 +25,7 @@ reg     decode_done;
 reg     [24:0] temp_decoded; // decoded user input
 reg     [24:0] temp_cleared; // cleared cells
 reg     [31:0] global_score; //track number of total wins
+reg     [1:0] n_nearby; //calculate # of mines directly next to chosen position
 reg     gameover; // did we explode a mine?
 reg     win; // calculate if user has won
 reg     alu_done;
@@ -40,6 +42,8 @@ if (restart == 1'b1) begin
         gameover = 0;
         win = 0;
         global_score = 0;
+        n_nearby = 0;
+
    end else if (start) begin
         // TODO: call the RNG placement for mines
         mines = 24'b001010001000000000000000;
@@ -48,11 +52,12 @@ if (restart == 1'b1) begin
    end else if (decode) begin 
         if (temp_data_in < 25) begin                   // if input data is valid
                temp_decoded = 1'b1 << temp_data_in;    // set bit at index of input data
-          else begin
-               temp_decoded = 25'b0;                    // error; default case
+        end else begin
+               temp_decoded = 25'b0;                    // error, default case
           end
-        end
    end else if (alu) begin
+        // TODO: functionality of n_nearby mines
+        n_nearby = 2'b01;
         // compute the cleared cells
         temp_cleared = temp_cleared | temp_decoded;
         // perform 'bitwise-and' to see if a mine exploded (maybe use &&?)

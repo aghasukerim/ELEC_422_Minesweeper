@@ -9,16 +9,17 @@ module top_module_tb();
 
 // Inputs to top_module
 reg  in_clka, in_clkb, in_restart, in_place, in_data_in;
-reg [3:0] in_data;
+reg [4:0] in_data;
 // Outputs from top_module
 wire [3:0] out_state_main;
 wire out_start, out_place_done, out_load, out_decode, out_decode_done;
-wire [8:0] out_mines;
-wire [3:0] out_temp_data_in;
+wire [24:0] out_mines;
+wire [4:0] out_temp_data_in;
 wire out_alu, out_alu_done, out_gameover, out_win;
 wire [31:0] out_global_score;
-wire [8:0] out_temp_decoded;
-wire [8:0] out_temp_cleared;
+wire [1:0] out_n_nearby;
+wire [24:0] out_temp_decoded;
+wire [24:0] out_temp_cleared;
 
 
 //create a top FSM system instance.
@@ -41,6 +42,7 @@ top_module top (.in_clka (in_clka),
 	       .out_gameover (out_gameover),
 		   .out_win (out_win),
 		   .out_global_score (out_global_score),
+		   .out_n_nearby (out_n_nearby),
 	       .out_temp_decoded (out_temp_decoded),
 	       .out_temp_cleared (out_temp_cleared)
           );
@@ -76,6 +78,7 @@ in_clka = 0; in_clkb = 1; #10
 
 // Cycle 4
 // Generate a random value for the mines
+in_place = 0;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
