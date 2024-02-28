@@ -88,7 +88,7 @@ dp dp_ALU  (.clka (in_clka),
            .display_done (out_display_done)
           );
           
- rng rng (
+/* rng rng (
   .in_clka(in_clka),
   .in_start(in_start),
   .in_mult(in_mult),
@@ -97,4 +97,4 @@ dp dp_ALU  (.clka (in_clka),
   .out_mines(out_mines),
   .in_mines_num(in_mines_num)
   ); 
-endmodule // End of Module top_module
+*/endmodule // End of Module top_module
