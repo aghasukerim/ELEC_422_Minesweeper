@@ -4,12 +4,12 @@
 //
 // Function    : top file call main_FSM controller.
 //-----------------------------------------------------
-module top_module (in_clka, in_clkb, in_restart, in_start, in, mult, in_increment, in_modulus, out_state_main, in_place, in_data_in, in_data,
+module top_module (in_clka, in_clkb, in_restart, in_start, in, mult, in_increment, in_modulus, in_mines_num, out_state_main, in_place, in_data_in, in_data,
  out_start, out_place_done, out_mines, out_load, out_temp_data_in, out_decode, out_decode_done,
  out_alu, out_alu_done, out_gameover, out_win, out_global_score, out_n_nearby, out_temp_decoded, out_temp_cleared);
  
 //-------------Input Ports-----------------------------
-input   in_clka, in_clkb, in_restart, in_place, in_data_in, in_increment, in_mult, in_modulus;
+input   in_clka, in_clkb, in_restart, in_place, in_data_in, in_increment, in_mult, in_modulus, in_mines_num;
 input   [4:0] in_data;
 //-------------Output Ports----------------------------
 output  [3:0] out_state_main; 
@@ -20,7 +20,7 @@ output [24:0] out_temp_decoded;
 output [24:0] out_temp_cleared;
 output [1:0] out_n_nearby;
 //-------------Input ports Data Type-------------------
-wire    in_clka, in_clkb, in_restart, in_increment, in_mult, in_modulus;
+wire    in_clka, in_clkb, in_restart, in_increment, in_mult, in_modulus, in_mines_num;
 wire    in_place, in_data_in;
 wire    [4:0] in_data;
 //-------------Output Ports Data Type------------------
@@ -85,7 +85,8 @@ dp dp_ALU  (.clka (in_clka),
   .in_mult(in_mult),
   .in_increment(in_increment),
   .in_modulus(in_modulus),
-  .out_mines(out_mines)
+  .out_mines(out_mines),
+  .in_mines_num(in_mines_num)
            );
  
 endmodule // End of Module top_module
