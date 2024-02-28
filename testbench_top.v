@@ -10,7 +10,7 @@ module top_module_tb();
 // Inputs to top_module
 reg  in_clka, in_clkb, in_restart, in_place, in_data_in;
 reg [4:0] in_data;
-reg in_mult, in_increment, in_modulus; // registers for the RNG
+reg in_mult, in_increment, in_modulus, in_mines_num; // registers for the RNG
 // Outputs from top_module
 wire [3:0] out_state_main;
 wire out_start, out_place_done, out_load, out_decode, out_decode_done;
@@ -34,6 +34,7 @@ top_module top (.in_clka (in_clka),
            .in_mult (in_mult),
            .in_increment (in_increment),
            .in_modulus (in_modulus),
+           .in_mines_num (in_mines_num), 
 	       .out_state_main (out_state_main),
 	       .out_start (out_start),
 	       .out_place_done (out_place_done),
@@ -72,6 +73,7 @@ in_data = 0;
 in_mult = 0;
 in_increment = 0;
 in_modulus = 0;
+in_mines_num = 3;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
