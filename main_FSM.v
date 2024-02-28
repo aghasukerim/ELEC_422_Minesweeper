@@ -4,19 +4,20 @@
 // File Name   : minesweeper_FSM.v
 // Function    : 2 Phase Clock minesweeper_FSM
 //-----------------------------------------------------
-module main_FSM (clka, clkb, restart, state, place, start, place_done, data_in, data, load, decode, decode_done, alu, alu_done, gameover);
+module main_FSM (clka, clkb, restart, state, place, start, place_done, data_in, data, load, decode, decode_done, alu, alu_done, gameover, display, display_done);
 //-------------Input Ports-----------------------------
-input   clka, clkb, restart, place, place_done, data_in, decode_done, alu_done, gameover;
+input   clka, clkb, restart, place, place_done, data_in, decode_done, alu_done, gameover, display_done;
 input [4:0] data;
 //-------------Output Ports----------------------------
-output  state, start, load, decode, alu;
+output  state, start, load, decode, alu, display;
 //-------------Input ports Data Type-------------------
-wire    clka, clkb, restart, place, place_done, data_in, decode_done, alu_done, gameover;
+wire    clka, clkb, restart, place, place_done, data_in, decode_done, alu_done, gameover, display_done;
 //-------------Output Ports Data Type------------------
 reg     start; // data path can place the mines on the board
 reg     load; // data path can load the user input
 reg     decode; // data path can decode the user input
 reg     alu; // data path can compute in the alu
+reg     display; // data path can display the updated board
 //------Internal Constants--------------------------
 parameter   SIZE = 4;
 parameter   IDLE  = 0, RNG_PLACE_MINES = 1, RNG_WAIT = 2, LOAD = 3, DECODE = 4,
@@ -91,6 +92,18 @@ case(state)
     begin
         fsm_function = IDLE;
     end    
+    DISPLAY:
+    begin
+        fsm_function = DISPLAY_WAIT;
+    end    
+    DISPLAY_WAIT:
+    begin
+        if (display_done & data_in) begin
+            fsm_function = LOAD;
+        end else begin 
+            fsm_function = DISPLAY_WAIT;
+        end
+    end    
    default: fsm_function = IDLE;
   endcase
 endfunction
@@ -113,6 +126,7 @@ begin : OUTPUT_LOGIC
             load <= 0;
             decode <= 0;
             alu <= 0;
+            display <= 0;
         end
   RNG_PLACE_MINES: begin
             state <= next_state;
@@ -120,6 +134,7 @@ begin : OUTPUT_LOGIC
             load <= 0;
             decode <= 0;
             alu <= 0;
+            display <= 0;
   end
   RNG_WAIT: begin
             state <= next_state;
@@ -127,41 +142,62 @@ begin : OUTPUT_LOGIC
             load <= 0;
             decode <= 0;
             alu <= 0;
+            display <= 0;
   end
   LOAD: begin
             state <= next_state;
             load <= 1;
             decode <= 0;
+            display <= 0;
   end
   DECODE: begin
             state <= next_state;
             load <= 0;
             decode <= 1;
             alu <= 0;
+            display <= 0;
   end
   DECODE_WAIT: begin
             state <= next_state;
             load <= 0;
             decode <= 0;
             alu <= 0;
+            display <= 0;
   end  
   ALU: begin
             state <= next_state;
             load <= 0;
             decode <= 0;
             alu <= 1;
+            display <= 0;
   end  
   ALU_WAIT: begin
             state <= next_state;
             load <= 0;
             decode <= 0;
             alu <= 0;
+            display <= 0;
   end
   GAMEOVER: begin
             state <= next_state;
             load <= 0;
             decode <= 0;
             alu <= 0;
+            display <= 0;
+  end  
+  DISPLAY: begin
+            state <= next_state;
+            load <= 0;
+            decode <= 0;
+            alu <= 0;
+            display <= 1;
+  end  
+  DISPLAY_WAIT: begin
+            state <= next_state;
+            load <= 0;
+            decode <= 0;
+            alu <= 0;
+            display <= 0;
   end  
   default: begin
             state <= next_state;

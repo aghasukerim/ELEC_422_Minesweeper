@@ -23,7 +23,7 @@ wire    in_clka, in_start, in_mult, in_increment, in_modulus, in_mine_num;
 //-------------Output Ports Data Type------------------
 reg [24:0] mines;
 //----------Code starts Here------------------------
- always @ (negedge clka)
+/* always @ (negedge clka)
  begin
   if (start == 1'b1) begin
    out_mines = 25'b0;
@@ -38,6 +38,6 @@ reg [24:0] mines;
      out_mines[i] = out_mines[i + ({$random}%25)]
     end
    end 
-
   end
  end 
+*/endmodule

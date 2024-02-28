@@ -4,9 +4,10 @@
 //
 // Function    : top file call main_FSM controller.
 //-----------------------------------------------------
-module top_module (in_clka, in_clkb, in_restart, in_start, in, mult, in_increment, in_modulus, in_mines_num, out_state_main, in_place, in_data_in, in_data,
+module top_module (in_clka, in_clkb, in_restart, in_mult, in_increment, in_modulus, in_mines_num, out_state_main, in_place, in_data_in, in_data,
  out_start, out_place_done, out_mines, out_load, out_temp_data_in, out_decode, out_decode_done,
- out_alu, out_alu_done, out_gameover, out_win, out_global_score, out_n_nearby, out_temp_decoded, out_temp_cleared);
+ out_alu, out_alu_done, out_gameover, out_win, out_global_score, out_n_nearby, out_temp_decoded, out_temp_cleared,
+ out_display, out_display_done);
  
 //-------------Input Ports-----------------------------
 input   in_clka, in_clkb, in_restart, in_place, in_data_in, in_increment, in_mult, in_modulus, in_mines_num;
@@ -15,6 +16,7 @@ input   [4:0] in_data;
 output  [3:0] out_state_main; 
 output  out_start, out_place_done, out_mines, out_load, out_temp_data_in, out_decode, out_decode_done;
 output  out_alu, out_alu_done, out_gameover, out_win;
+output out_display, out_display_done;
 output [31:0] out_global_score;
 output [24:0] out_temp_decoded;
 output [24:0] out_temp_cleared;
@@ -39,6 +41,8 @@ wire    [31:0] out_global_score;
 wire    [24:0] out_temp_decoded;
 wire    [24:0] out_temp_cleared;
 wire    [1:0] out_n_nearby;
+wire    out_display;
+wire    out_display_done;
 
 //----------Code starts Here------------------------
 
@@ -56,7 +60,9 @@ main_FSM main (.clka (in_clka),
            .decode_done (out_decode_done),
            .alu (out_alu),
            .alu_done (out_alu_done),
-           .gameover (out_gameover)
+           .gameover (out_gameover),
+           .display (out_display),
+           .display_done (out_display_done)
           );
 
 dp dp_ALU  (.clka (in_clka),
@@ -77,8 +83,11 @@ dp dp_ALU  (.clka (in_clka),
            .global_score (out_global_score),
            .n_nearby (out_n_nearby),
            .temp_decoded (out_temp_decoded),
-           .temp_cleared (out_temp_cleared)
+           .temp_cleared (out_temp_cleared) ,
+           .display (out_display),
+           .display_done (out_display_done)
           );
+          
  rng rng (
   .in_clka(in_clka),
   .in_start(in_start),
@@ -87,6 +96,5 @@ dp dp_ALU  (.clka (in_clka),
   .in_modulus(in_modulus),
   .out_mines(out_mines),
   .in_mines_num(in_mines_num)
-           );
- 
+  ); 
 endmodule // End of Module top_module
