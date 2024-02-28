@@ -63,7 +63,7 @@ if (restart == 1'b1) begin
         // compute the cleared cells
         temp_cleared = temp_cleared | temp_decoded;
         // perform 'bitwise-and' to see if a mine exploded (maybe use &&?)
-        gameover = (mines & temp_decoded == 0); // weird here: it should be mines & temp_decoded != 0 but it's complemented
+        gameover = ((mines & temp_decoded) != 0); // weird here: it should be mines & temp_decoded != 0 but it's complemented
         win = (mines == ~temp_cleared); //check that all non-mine positions have been cleared
         if (win) begin
              global_score = global_score + 1;
