@@ -1,0 +1,412 @@
+$date
+	Tue Feb 27 21:27:36 2024
+$end
+$version
+	QuestaSim Version 2023.2
+$end
+$timescale
+	10ps
+$end
+
+$scope module top_module_tb $end
+$var reg 1 ! in_clka $end
+$var reg 1 " in_clkb $end
+$var reg 1 # in_restart $end
+$var reg 1 $ in_place $end
+$var reg 1 % in_data_in $end
+$var reg 5 & in_data [4:0] $end
+$var reg 1 ' in_mult $end
+$var reg 1 ( in_increment $end
+$var reg 1 ) in_modulus $end
+$var reg 1 * in_mines_num $end
+$var wire 1 + out_state_main [3] $end
+$var wire 1 , out_state_main [2] $end
+$var wire 1 - out_state_main [1] $end
+$var wire 1 . out_state_main [0] $end
+$var wire 1 / out_start $end
+$var wire 1 0 out_place_done $end
+$var wire 1 1 out_load $end
+$var wire 1 2 out_decode $end
+$var wire 1 3 out_decode_done $end
+$var wire 1 4 out_mines [24] $end
+$var wire 1 5 out_mines [23] $end
+$var wire 1 6 out_mines [22] $end
+$var wire 1 7 out_mines [21] $end
+$var wire 1 8 out_mines [20] $end
+$var wire 1 9 out_mines [19] $end
+$var wire 1 : out_mines [18] $end
+$var wire 1 ; out_mines [17] $end
+$var wire 1 < out_mines [16] $end
+$var wire 1 = out_mines [15] $end
+$var wire 1 > out_mines [14] $end
+$var wire 1 ? out_mines [13] $end
+$var wire 1 @ out_mines [12] $end
+$var wire 1 A out_mines [11] $end
+$var wire 1 B out_mines [10] $end
+$var wire 1 C out_mines [9] $end
+$var wire 1 D out_mines [8] $end
+$var wire 1 E out_mines [7] $end
+$var wire 1 F out_mines [6] $end
+$var wire 1 G out_mines [5] $end
+$var wire 1 H out_mines [4] $end
+$var wire 1 I out_mines [3] $end
+$var wire 1 J out_mines [2] $end
+$var wire 1 K out_mines [1] $end
+$var wire 1 L out_mines [0] $end
+$var wire 1 M out_temp_data_in [4] $end
+$var wire 1 N out_temp_data_in [3] $end
+$var wire 1 O out_temp_data_in [2] $end
+$var wire 1 P out_temp_data_in [1] $end
+$var wire 1 Q out_temp_data_in [0] $end
+$var wire 1 R out_alu $end
+$var wire 1 S out_alu_done $end
+$var wire 1 T out_gameover $end
+$var wire 1 U out_win $end
+$var wire 1 V out_global_score [31] $end
+$var wire 1 W out_global_score [30] $end
+$var wire 1 X out_global_score [29] $end
+$var wire 1 Y out_global_score [28] $end
+$var wire 1 Z out_global_score [27] $end
+$var wire 1 [ out_global_score [26] $end
+$var wire 1 \ out_global_score [25] $end
+$var wire 1 ] out_global_score [24] $end
+$var wire 1 ^ out_global_score [23] $end
+$var wire 1 _ out_global_score [22] $end
+$var wire 1 ` out_global_score [21] $end
+$var wire 1 a out_global_score [20] $end
+$var wire 1 b out_global_score [19] $end
+$var wire 1 c out_global_score [18] $end
+$var wire 1 d out_global_score [17] $end
+$var wire 1 e out_global_score [16] $end
+$var wire 1 f out_global_score [15] $end
+$var wire 1 g out_global_score [14] $end
+$var wire 1 h out_global_score [13] $end
+$var wire 1 i out_global_score [12] $end
+$var wire 1 j out_global_score [11] $end
+$var wire 1 k out_global_score [10] $end
+$var wire 1 l out_global_score [9] $end
+$var wire 1 m out_global_score [8] $end
+$var wire 1 n out_global_score [7] $end
+$var wire 1 o out_global_score [6] $end
+$var wire 1 p out_global_score [5] $end
+$var wire 1 q out_global_score [4] $end
+$var wire 1 r out_global_score [3] $end
+$var wire 1 s out_global_score [2] $end
+$var wire 1 t out_global_score [1] $end
+$var wire 1 u out_global_score [0] $end
+$var wire 1 v out_n_nearby [1] $end
+$var wire 1 w out_n_nearby [0] $end
+$var wire 1 x out_temp_decoded [24] $end
+$var wire 1 y out_temp_decoded [23] $end
+$var wire 1 z out_temp_decoded [22] $end
+$var wire 1 { out_temp_decoded [21] $end
+$var wire 1 | out_temp_decoded [20] $end
+$var wire 1 } out_temp_decoded [19] $end
+$var wire 1 ~ out_temp_decoded [18] $end
+$var wire 1 !! out_temp_decoded [17] $end
+$var wire 1 "! out_temp_decoded [16] $end
+$var wire 1 #! out_temp_decoded [15] $end
+$var wire 1 $! out_temp_decoded [14] $end
+$var wire 1 %! out_temp_decoded [13] $end
+$var wire 1 &! out_temp_decoded [12] $end
+$var wire 1 '! out_temp_decoded [11] $end
+$var wire 1 (! out_temp_decoded [10] $end
+$var wire 1 )! out_temp_decoded [9] $end
+$var wire 1 *! out_temp_decoded [8] $end
+$var wire 1 +! out_temp_decoded [7] $end
+$var wire 1 ,! out_temp_decoded [6] $end
+$var wire 1 -! out_temp_decoded [5] $end
+$var wire 1 .! out_temp_decoded [4] $end
+$var wire 1 /! out_temp_decoded [3] $end
+$var wire 1 0! out_temp_decoded [2] $end
+$var wire 1 1! out_temp_decoded [1] $end
+$var wire 1 2! out_temp_decoded [0] $end
+$var wire 1 3! out_temp_cleared [24] $end
+$var wire 1 4! out_temp_cleared [23] $end
+$var wire 1 5! out_temp_cleared [22] $end
+$var wire 1 6! out_temp_cleared [21] $end
+$var wire 1 7! out_temp_cleared [20] $end
+$var wire 1 8! out_temp_cleared [19] $end
+$var wire 1 9! out_temp_cleared [18] $end
+$var wire 1 :! out_temp_cleared [17] $end
+$var wire 1 ;! out_temp_cleared [16] $end
+$var wire 1 <! out_temp_cleared [15] $end
+$var wire 1 =! out_temp_cleared [14] $end
+$var wire 1 >! out_temp_cleared [13] $end
+$var wire 1 ?! out_temp_cleared [12] $end
+$var wire 1 @! out_temp_cleared [11] $end
+$var wire 1 A! out_temp_cleared [10] $end
+$var wire 1 B! out_temp_cleared [9] $end
+$var wire 1 C! out_temp_cleared [8] $end
+$var wire 1 D! out_temp_cleared [7] $end
+$var wire 1 E! out_temp_cleared [6] $end
+$var wire 1 F! out_temp_cleared [5] $end
+$var wire 1 G! out_temp_cleared [4] $end
+$var wire 1 H! out_temp_cleared [3] $end
+$var wire 1 I! out_temp_cleared [2] $end
+$var wire 1 J! out_temp_cleared [1] $end
+$var wire 1 K! out_temp_cleared [0] $end
+$var wire 1 L! out_display $end
+$var wire 1 M! out_display_done $end
+
+$scope module top $end
+$var wire 1 N! in_clka $end
+$var wire 1 O! in_clkb $end
+$var wire 1 P! in_restart $end
+$var wire 1 Q! in_place $end
+$var wire 1 R! in_data_in $end
+$var wire 1 S! in_increment $end
+$var wire 1 T! in_mult $end
+$var wire 1 U! in_modulus $end
+$var wire 1 V! in_mines_num $end
+$var wire 1 W! in_data [4] $end
+$var wire 1 X! in_data [3] $end
+$var wire 1 Y! in_data [2] $end
+$var wire 1 Z! in_data [1] $end
+$var wire 1 [! in_data [0] $end
+$var wire 1 + out_state_main [3] $end
+$var wire 1 , out_state_main [2] $end
+$var wire 1 - out_state_main [1] $end
+$var wire 1 . out_state_main [0] $end
+$var wire 1 / out_start $end
+$var wire 1 0 out_place_done $end
+$var wire 1 4 out_mines [24] $end
+$var wire 1 5 out_mines [23] $end
+$var wire 1 6 out_mines [22] $end
+$var wire 1 7 out_mines [21] $end
+$var wire 1 8 out_mines [20] $end
+$var wire 1 9 out_mines [19] $end
+$var wire 1 : out_mines [18] $end
+$var wire 1 ; out_mines [17] $end
+$var wire 1 < out_mines [16] $end
+$var wire 1 = out_mines [15] $end
+$var wire 1 > out_mines [14] $end
+$var wire 1 ? out_mines [13] $end
+$var wire 1 @ out_mines [12] $end
+$var wire 1 A out_mines [11] $end
+$var wire 1 B out_mines [10] $end
+$var wire 1 C out_mines [9] $end
+$var wire 1 D out_mines [8] $end
+$var wire 1 E out_mines [7] $end
+$var wire 1 F out_mines [6] $end
+$var wire 1 G out_mines [5] $end
+$var wire 1 H out_mines [4] $end
+$var wire 1 I out_mines [3] $end
+$var wire 1 J out_mines [2] $end
+$var wire 1 K out_mines [1] $end
+$var wire 1 L out_mines [0] $end
+$var wire 1 1 out_load $end
+$var wire 1 M out_temp_data_in [4] $end
+$var wire 1 N out_temp_data_in [3] $end
+$var wire 1 O out_temp_data_in [2] $end
+$var wire 1 P out_temp_data_in [1] $end
+$var wire 1 Q out_temp_data_in [0] $end
+$var wire 1 2 out_decode $end
+$var wire 1 3 out_decode_done $end
+$var wire 1 R out_alu $end
+$var wire 1 S out_alu_done $end
+$var wire 1 T out_gameover $end
+$var wire 1 U out_win $end
+$var wire 1 L! out_display $end
+$var wire 1 M! out_display_done $end
+$var wire 1 V out_global_score [31] $end
+$var wire 1 W out_global_score [30] $end
+$var wire 1 X out_global_score [29] $end
+$var wire 1 Y out_global_score [28] $end
+$var wire 1 Z out_global_score [27] $end
+$var wire 1 [ out_global_score [26] $end
+$var wire 1 \ out_global_score [25] $end
+$var wire 1 ] out_global_score [24] $end
+$var wire 1 ^ out_global_score [23] $end
+$var wire 1 _ out_global_score [22] $end
+$var wire 1 ` out_global_score [21] $end
+$var wire 1 a out_global_score [20] $end
+$var wire 1 b out_global_score [19] $end
+$var wire 1 c out_global_score [18] $end
+$var wire 1 d out_global_score [17] $end
+$var wire 1 e out_global_score [16] $end
+$var wire 1 f out_global_score [15] $end
+$var wire 1 g out_global_score [14] $end
+$var wire 1 h out_global_score [13] $end
+$var wire 1 i out_global_score [12] $end
+$var wire 1 j out_global_score [11] $end
+$var wire 1 k out_global_score [10] $end
+$var wire 1 l out_global_score [9] $end
+$var wire 1 m out_global_score [8] $end
+$var wire 1 n out_global_score [7] $end
+$var wire 1 o out_global_score [6] $end
+$var wire 1 p out_global_score [5] $end
+$var wire 1 q out_global_score [4] $end
+$var wire 1 r out_global_score [3] $end
+$var wire 1 s out_global_score [2] $end
+$var wire 1 t out_global_score [1] $end
+$var wire 1 u out_global_score [0] $end
+$var wire 1 x out_temp_decoded [24] $end
+$var wire 1 y out_temp_decoded [23] $end
+$var wire 1 z out_temp_decoded [22] $end
+$var wire 1 { out_temp_decoded [21] $end
+$var wire 1 | out_temp_decoded [20] $end
+$var wire 1 } out_temp_decoded [19] $end
+$var wire 1 ~ out_temp_decoded [18] $end
+$var wire 1 !! out_temp_decoded [17] $end
+$var wire 1 "! out_temp_decoded [16] $end
+$var wire 1 #! out_temp_decoded [15] $end
+$var wire 1 $! out_temp_decoded [14] $end
+$var wire 1 %! out_temp_decoded [13] $end
+$var wire 1 &! out_temp_decoded [12] $end
+$var wire 1 '! out_temp_decoded [11] $end
+$var wire 1 (! out_temp_decoded [10] $end
+$var wire 1 )! out_temp_decoded [9] $end
+$var wire 1 *! out_temp_decoded [8] $end
+$var wire 1 +! out_temp_decoded [7] $end
+$var wire 1 ,! out_temp_decoded [6] $end
+$var wire 1 -! out_temp_decoded [5] $end
+$var wire 1 .! out_temp_decoded [4] $end
+$var wire 1 /! out_temp_decoded [3] $end
+$var wire 1 0! out_temp_decoded [2] $end
+$var wire 1 1! out_temp_decoded [1] $end
+$var wire 1 2! out_temp_decoded [0] $end
+$var wire 1 3! out_temp_cleared [24] $end
+$var wire 1 4! out_temp_cleared [23] $end
+$var wire 1 5! out_temp_cleared [22] $end
+$var wire 1 6! out_temp_cleared [21] $end
+$var wire 1 7! out_temp_cleared [20] $end
+$var wire 1 8! out_temp_cleared [19] $end
+$var wire 1 9! out_temp_cleared [18] $end
+$var wire 1 :! out_temp_cleared [17] $end
+$var wire 1 ;! out_temp_cleared [16] $end
+$var wire 1 <! out_temp_cleared [15] $end
+$var wire 1 =! out_temp_cleared [14] $end
+$var wire 1 >! out_temp_cleared [13] $end
+$var wire 1 ?! out_temp_cleared [12] $end
+$var wire 1 @! out_temp_cleared [11] $end
+$var wire 1 A! out_temp_cleared [10] $end
+$var wire 1 B! out_temp_cleared [9] $end
+$var wire 1 C! out_temp_cleared [8] $end
+$var wire 1 D! out_temp_cleared [7] $end
+$var wire 1 E! out_temp_cleared [6] $end
+$var wire 1 F! out_temp_cleared [5] $end
+$var wire 1 G! out_temp_cleared [4] $end
+$var wire 1 H! out_temp_cleared [3] $end
+$var wire 1 I! out_temp_cleared [2] $end
+$var wire 1 J! out_temp_cleared [1] $end
+$var wire 1 K! out_temp_cleared [0] $end
+$var wire 1 v out_n_nearby [1] $end
+$var wire 1 w out_n_nearby [0] $end
+$var wire 1 \! in_start $end
+
+$scope module main $end
+$var parameter 32 ]! SIZE $end
+$var parameter 32 ^! IDLE $end
+$var parameter 32 _! RNG_PLACE_MINES $end
+$var parameter 32 `! RNG_WAIT $end
+$var parameter 32 a! LOAD $end
+$var parameter 32 b! DECODE $end
+$var parameter 32 c! DECODE_WAIT $end
+$var parameter 32 d! ALU $end
+$var parameter 32 e! ALU_WAIT $end
+$var parameter 32 f! DISPLAY $end
+$var parameter 32 g! DISPLAY_WAIT $end
+$var parameter 32 h! GAMEOVER $end
+$var wire 1 N! clka $end
+$var wire 1 O! clkb $end
+$var wire 1 P! restart $end
+$var wire 1 Q! place $end
+$var wire 1 0 place_done $end
+$var wire 1 R! data_in $end
+$var wire 1 3 decode_done $end
+$var wire 1 S alu_done $end
+$var wire 1 T gameover $end
+$var wire 1 M! display_done $end
+$var wire 1 W! data [4] $end
+$var wire 1 X! data [3] $end
+$var wire 1 Y! data [2] $end
+$var wire 1 Z! data [1] $end
+$var wire 1 [! data [0] $end
+$var reg 4 i! state [3:0] $end
+$var reg 1 j! start $end
+$var reg 1 k! load $end
+$var reg 1 l! decode $end
+$var reg 1 m! alu $end
+$var reg 1 n! display $end
+$var wire 1 o! temp_state [3] $end
+$var wire 1 p! temp_state [2] $end
+$var wire 1 q! temp_state [1] $end
+$var wire 1 r! temp_state [0] $end
+$var reg 4 s! next_state [3:0] $end
+
+$scope function fsm_function $end
+$var reg 4 t! fsm_function [3:0] $end
+$var reg 4 u! state [3:0] $end
+$var reg 1 v! place $end
+$var reg 1 w! data_in $end
+$upscope $end
+
+$scope begin FSM_SEQ $end
+$upscope $end
+
+$scope begin OUTPUT_LOGIC $end
+$upscope $end
+$upscope $end
+
+$scope module dp_ALU $end
+$var wire 1 N! clka $end
+$var wire 1 O! clkb $end
+$var wire 1 P! restart $end
+$var wire 1 / start $end
+$var wire 1 1 load $end
+$var wire 1 2 decode $end
+$var wire 1 R alu $end
+$var wire 1 L! display $end
+$var wire 1 W! data [4] $end
+$var wire 1 X! data [3] $end
+$var wire 1 Y! data [2] $end
+$var wire 1 Z! data [1] $end
+$var wire 1 [! data [0] $end
+$var reg 1 x! place_done $end
+$var reg 1 y! decode_done $end
+$var reg 1 z! alu_done $end
+$var reg 1 {! display_done $end
+$var reg 1 |! gameover $end
+$var reg 1 }! win $end
+$var reg 25 ~! mines [24:0] $end
+$var reg 5 !" temp_data_in [4:0] $end
+$var reg 25 "" temp_decoded [24:0] $end
+$var reg 25 #" temp_cleared [24:0] $end
+$var reg 32 $" global_score [31:0] $end
+$var reg 2 %" n_nearby [1:0] $end
+$upscope $end
+
+$scope module rng $end
+$var wire 1 N! in_clka $end
+$var wire 1 \! in_start $end
+$var wire 1 T! in_mult $end
+$var wire 1 S! in_increment $end
+$var wire 1 U! in_modulus $end
+$var wire 1 V! in_mines_num $end
+$var wire 1 4 out_mines [24] $end
+$var wire 1 5 out_mines [23] $end
+$var wire 1 6 out_mines [22] $end
+$var wire 1 7 out_mines [21] $end
+$var wire 1 8 out_mines [20] $end
+$var wire 1 9 out_mines [19] $end
+$var wire 1 : out_mines [18] $end
+$var wire 1 ; out_mines [17] $end
+$var wire 1 < out_mines [16] $end
+$var wire 1 = out_mines [15] $end
+$var wire 1 > out_mines [14] $end
+$var wire 1 ? out_mines [13] $end
+$var wire 1 @ out_mines [12] $end
+$var wire 1 A out_mines [11] $end
+$var wire 1 B out_mines [10] $end
+$var wire 1 C out_mines [9] $end
+$var wire 1 D out_mines [8] $end
+$var wire 1 E out_mines [7] $end
+$var wire 1 F out_mines [6] $end
+$var wire 1 G out_mines [5] $end
+$var wire 1 H out_mines [4] $end
+$var wire 1 I out_mines [3] $end
+$var wire 1 J out_mines [2] $end
+$var wire 1 K out_mines [1] $end
+$var wire 1 L out_mines [0] $end
+$var reg 25 &" mines [24:0] $end

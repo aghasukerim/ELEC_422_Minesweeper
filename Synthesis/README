@@ -1,0 +1,16 @@
+README for Synthesis
+
+Synthesis is done using Synopsys Design Compiler (DC).
+
+A .tcl script has been created called "run" which runs Design Compiler in a batch mode.
+
+The input Verilog files are listed in the compile_dc.tcl file.
+You will need to update this for your designs, see the comments in the compile_dc.tcl file. 
+
+The output will be a structural Verilog file with the cells filled from our cell library.
+The output Verilog file will have a .vh file extension.
+
+You will then need to copy the .vh file to the Questa_post_DC folder for further simulation.
+
+
+JRC 1/25/24
