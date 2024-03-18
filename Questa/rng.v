@@ -21,14 +21,16 @@ input   in_clka, in_start;
 wire    in_clka, in_start;
 integer in_mult, in_increment, in_modulus, in_mines_num;
 //-------------Output Ports Data Type------------------
-reg [24:0] mines;
+ reg [24:0] out_mines;
 //----------Code starts Here------------------------
  //--------Internal Variables-----------------------
  /*
- Holds "n" number of randomly generated integers (representing indexes of out_mines)
- such that "n" is equal to the number of mines one wishes to generate.
+ Holds randomly generated integer (representing index of out_mines)
  */
- wire [24:0] random_index;
+ integer random_index;
+ //Randomly generated integer of a given iteration of the "for" loop below
+ integer temp_index;
+ 
  //-------------------------------------------------
  /*always @ (negedge clka)
  begin
@@ -51,9 +53,17 @@ reg [24:0] mines;
  always @ (negedge clka) begin
   if (start == 1'b1) begin
    out_mines = 25'b0;
-   random_index = 25'b0;
+   random_index = 0;
    for (int i = 0; i < in_mines_num; i = i + 1) begin
-    random_index = (in_mult)
+    if (i == 0) begin
+     temp_index = (((in_mult) + in_increment) % 25);
+     out_mines[temp_index] = 1'b1;
+     random_index = temp_index;
+    end else begin
+     temp_index = (((in_mult * random_index) + in_increment) % 25);
+     out_mines[temp_index] = 1'b1;
+     random_index = temp_index;
+    end
    end
   end
  end
