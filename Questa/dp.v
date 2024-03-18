@@ -48,6 +48,7 @@ if (restart == 1'b1) begin
 
    end else if (start) begin
         // TODO: call the RNG placement for mines
+       
         mines = 24'b001010001000000000100000;
    end else if (load) begin
         temp_data_in = data;
