@@ -39,11 +39,11 @@ integer in_mult, in_increment, in_modulus, in_mines_num;
     if (i == 0) begin
      temp_index = (((in_mult) + in_increment) % 25); //Ensures temp_index is an integer between 0 and 24
      out_mines[temp_index] = 1'b1; // Places a mine at the cell (of the 5x5 grid array) represented by (temp_index)th index of out_mines
-     random_index = temp_index;
+     random_index = temp_index; 
     end else begin
      temp_index = (((in_mult * random_index) + in_increment) % 25);
      out_mines[temp_index] = 1'b1;
-     random_index = temp_index;
+     random_index = temp_index; // Holds value of temp_index to be used in next iteration
     end
    end
   end
