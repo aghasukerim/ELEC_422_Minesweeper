@@ -3,7 +3,8 @@
 // File Name   : rng.v
 // Function    : Pseudo-Random Number Generator to compute placement of mines
 //-----------------------------------------------------
-module rng (in_clka, in_start, in_mult, in_increment, in_mines_num, in_place, out_place_done, data_in, rng_done , out_mines);
+module rng (in_clka, in_start, in_mult, in_increment, in_mines_num, in_place, 
+            out_place_done, data_in, rng_done , out_mines);
 //-------------Input Ports-----------------------------
   input   in_clka, in_start, in_place, data_in;
  //input  in_mult, in_increment, in_mines_num;
