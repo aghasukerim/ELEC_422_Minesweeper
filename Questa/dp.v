@@ -48,7 +48,7 @@ if (restart == 1'b1) begin
 
    end else if (start) begin
         // TODO: call the RNG placement for mines
-        mines = 24'b001010001000000000100000;
+        mines = 25'b0000000000000000000000001;
    end else if (load) begin
         temp_data_in = data;
    end else if (decode) begin 
@@ -59,7 +59,16 @@ if (restart == 1'b1) begin
           end
    end else if (alu) begin
         // TODO: functionality of n_nearby mines
-        n_nearby = 2'b01;
+        casez (x)
+          25'b0???00???00???00???00???0: begin // positions of column 2,3,4 (count from 1)
+               if (mines[temp_data_in - 1] == 1) begin
+                    n_nearby = n_nearby + 1;
+               end
+          default:
+               n_nearby = 0;
+          end
+
+        endcase
         // compute the cleared cells
         temp_cleared = temp_cleared | temp_decoded;
         // perform 'bitwise-and' to see if a mine exploded (maybe use &&?)

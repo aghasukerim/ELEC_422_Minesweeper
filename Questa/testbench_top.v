@@ -171,7 +171,7 @@ in_clka = 0; in_clkb = 1; #10
 // Cycle 14
 // new user input
 in_data_in = 1;
-in_data = 5;
+in_data = 1;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
