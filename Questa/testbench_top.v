@@ -10,10 +10,10 @@ module top_module_tb();
 // Inputs to top_module
 reg  in_clka, in_clkb, in_restart, in_place, in_data_in;
 reg [4:0] in_data;
-reg in_mult, in_increment, in_modulus, in_mines_num; // registers for the RNG
+reg in_mult, in_increment, in_mines_num; // registers for the RNG
 // Outputs from top_module
 wire [3:0] out_state_main;
-wire out_start, out_place_done, out_load, out_decode, out_decode_done;
+wire out_start, out_place_done, out_load, out_decode;
 wire [24:0] out_mines;
 wire [4:0] out_temp_data_in;
 wire out_alu, out_alu_done, out_gameover, out_win;
@@ -33,7 +33,6 @@ top_module top (.in_clka (in_clka),
            .in_data (in_data),
            .in_mult (in_mult),
            .in_increment (in_increment),
-           .in_modulus (in_modulus),
            .in_mines_num (in_mines_num), 
 	       .out_state_main (out_state_main),
 	       .out_start (out_start),
@@ -42,7 +41,6 @@ top_module top (.in_clka (in_clka),
 	       .out_temp_data_in (out_temp_data_in),
 	       .out_load (out_load),
 	       .out_decode (out_decode),
-	       .out_decode_done (out_decode_done),
 	       .out_alu (out_alu),
 	       .out_alu_done (out_alu_done),
 	       .out_gameover (out_gameover),
@@ -72,7 +70,6 @@ in_data_in = 0;
 in_data = 0;
 in_mult = 0;
 in_increment = 0;
-in_modulus = 0;
 in_mines_num = 3;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
@@ -171,7 +168,7 @@ in_clka = 0; in_clkb = 1; #10
 // Cycle 14
 // new user input
 in_data_in = 1;
-in_data = 1;
+in_data = 5;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
@@ -193,27 +190,20 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 // Cycle 17
-// Perform the decoding
-in_clka = 0; in_clkb = 0; #10;
-in_clka = 1; in_clkb = 0; #10;
-in_clka = 0; in_clkb = 0; #10;
-in_clka = 0; in_clkb = 1; #10
-
-// Cycle 18
 // Go to ALU
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 19
+// Cycle 18
 // Perform the bitwise ops
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 20
+// Cycle 19
 // Go to display state
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
@@ -221,7 +211,7 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 
-// Cycle 21
+// Cycle 20
 // Display the board
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
