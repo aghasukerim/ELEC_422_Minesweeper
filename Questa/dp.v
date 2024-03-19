@@ -48,7 +48,8 @@ if (restart == 1'b1) begin
 
    end else if (start) begin
         // TODO: call the RNG placement for mines
-    rng (in_clka, in_start == 1'b1, 2, 3, 5, out_mines);
+    rng (in_clka, in_start, in_mult, in_increment, in_mines_num, in_place,
+         out_place_done, data_in, rng_done , out_mines);
         //mines = 24'b001010001000000000100000;
         mines = out_mines;
    end else if (load) begin
