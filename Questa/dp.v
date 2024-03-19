@@ -31,6 +31,7 @@ reg     gameover; // did we explode a mine?
 reg     win; // calculate if user has won
 reg     alu_done; // all compuatations are done
 reg     display_done; // display is done
+reg     [1:0] nearby_temp; // temp storage of n_nearby
 
 //-------------Code Starts Here---------
 // Qualify the control signal by clka and clkb for the data and do registers
@@ -45,6 +46,7 @@ if (restart == 1'b1) begin
         win = 0;
         global_score = 0;
         n_nearby = 0;
+        nearby_temp = 0;
 
    end else if (start) begin
         // TODO: call the RNG placement for mines
@@ -52,6 +54,8 @@ if (restart == 1'b1) begin
          out_place_done, data_in, rng_done , out_mines);
         //mines = 24'b001010001000000000100000;
         mines = out_mines;
+        gameover = 0;
+        n_nearby = 0;
    end else if (load) begin
         temp_data_in = data;
    end else if (decode) begin 
@@ -61,49 +65,49 @@ if (restart == 1'b1) begin
                temp_decoded = 25'b0;                    // error, default case
           end
    end else if (alu) begin
-     n_nearby = 0;                           // reset nearby counter each new data input
+     nearby_temp = 0;                           // reset nearby counter each new data input
      casez (temp_decoded)                    // separate by columns to ensure correct positions are checked
        25'b0???00???00???00???00???0: begin  // check positions of column 2,3,4 (count from 1)
             if (mines[temp_data_in - 6] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in - 5] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in - 4] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in - 1] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 1] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 4] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 5] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 6] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
        end
        25'b0000?0000?0000?0000?0000?: begin  // check positions of column 1
             if (mines[temp_data_in - 5] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in - 4] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 1] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 5] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 6] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
        end
        25'b?0000?0000?0000?0000?0000: begin  // check positions of column 5
             if (mines[temp_data_in - 6] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in - 5] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in - 1] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 4] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
             if (mines[temp_data_in + 5] == 1)
-                 n_nearby = n_nearby + 1;
+                 nearby_temp = nearby_temp + 1;
        end
      endcase
         // compute the cleared cells
@@ -114,9 +118,11 @@ if (restart == 1'b1) begin
         if (win) begin
              global_score = global_score + 1;
              gameover = 1; // if you win, also gameover
+             n_nearby = 0;
         end
    end else if (display) begin
-        // display
+        // TODO: display functionality
+        n_nearby = nearby_temp;
    end
 end
 
