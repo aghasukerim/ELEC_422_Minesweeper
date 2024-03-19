@@ -7,9 +7,9 @@
 module rng (in_clka, in_start, in_mult, in_increment, in_mines_num, out_mines);
 //-------------Input Ports-----------------------------
 input   in_clka, in_start;
- input   [4:0] in_mult;
- input   [4:0] in_increment;
- input   [4:0] in_mines_num;
+ input  in_mult;
+ input  in_increment;
+ input  in_mines_num;
  //in_param: [b2,b1,b0]
  //in_mult <-- multiplier ('a')
  //in_increment <-- increment ('c')
