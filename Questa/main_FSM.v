@@ -21,7 +21,7 @@ reg     display; // data path can display the updated board
 //------Internal Constants--------------------------
 parameter   SIZE = 4;
 parameter   IDLE  = 0, RNG_PLACE_MINES = 1, RNG_WAIT = 2, LOAD = 3, DECODE = 4,
-            DECODE_WAIT = 5, ALU = 6, ALU_WAIT = 7, DISPLAY = 8, DISPLAY_WAIT = 9, GAMEOVER = 10;
+            ALU = 5, ALU_WAIT = 6, DISPLAY = 7, DISPLAY_WAIT = 8, GAMEOVER = 9;
 //-------------Internal Variables---------------------------
 reg   [SIZE-1:0]          state;    	// Initial FSM state reg and then after
 					// processing new output FSM state reg
@@ -64,15 +64,7 @@ case(state)
     end
     DECODE:
     begin
-        fsm_function = DECODE_WAIT;
-    end
-    DECODE_WAIT:
-    begin
-        if (decode_done) begin 
-            fsm_function = ALU;
-        end else begin
-            fsm_function = DECODE_WAIT;
-        end
+        fsm_function = ALU;
     end
     ALU:
     begin
@@ -157,13 +149,6 @@ begin : OUTPUT_LOGIC
             alu <= 0;
             display <= 0;
   end
-  DECODE_WAIT: begin
-            state <= next_state;
-            load <= 0;
-            decode <= 0;
-            alu <= 0;
-            display <= 0;
-  end  
   ALU: begin
             state <= next_state;
             load <= 0;
