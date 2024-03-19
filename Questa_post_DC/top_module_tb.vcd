@@ -5111,4 +5111,279 @@ $upscope $end
 
 $scope module U192 $end
 $var wire 1 N A $end
-$var wire 1 S& B $e
+$var wire 1 S& B $end
+$var wire 1 `& Y $end
+$var wire 1 N0 I0_out $end
+$upscope $end
+
+$scope module U193 $end
+$var wire 1 M A $end
+$var wire 1 ^& B $end
+$var wire 1 _& Y $end
+$var wire 1 O0 I0_out $end
+$upscope $end
+
+$scope module U194 $end
+$var wire 1 `& A $end
+$var wire 1 _& B $end
+$var wire 1 Y$ Y $end
+$var wire 1 P0 I0_out $end
+$upscope $end
+
+$scope module U195 $end
+$var wire 1 b& A $end
+$var wire 1 a& B $end
+$var wire 1 o$ Y $end
+$var wire 1 Q0 I0_out $end
+$upscope $end
+
+$scope module U196 $end
+$var wire 1 c& A $end
+$var wire 1 a& B $end
+$var wire 1 n$ Y $end
+$var wire 1 R0 I0_out $end
+$upscope $end
+
+$scope module U197 $end
+$var wire 1 T& A $end
+$var wire 1 U& B $end
+$var wire 1 O C $end
+$var wire 1 d& Y $end
+$var wire 1 S0 I1_out $end
+$upscope $end
+
+$scope module U198 $end
+$var wire 1 Q& A $end
+$var wire 1 d& B $end
+$var wire 1 m$ Y $end
+$var wire 1 T0 I0_out $end
+$upscope $end
+
+$scope module U199 $end
+$var wire 1 f& A $end
+$var wire 1 d& B $end
+$var wire 1 l$ Y $end
+$var wire 1 U0 I0_out $end
+$upscope $end
+
+$scope module U200 $end
+$var wire 1 d& A $end
+$var wire 1 b& B $end
+$var wire 1 k$ Y $end
+$var wire 1 V0 I0_out $end
+$upscope $end
+
+$scope module U201 $end
+$var wire 1 d& A $end
+$var wire 1 c& B $end
+$var wire 1 j$ Y $end
+$var wire 1 W0 I0_out $end
+$upscope $end
+
+$scope module U202 $end
+$var wire 1 e& A $end
+$var wire 1 Q& B $end
+$var wire 1 i$ Y $end
+$var wire 1 X0 I0_out $end
+$upscope $end
+
+$scope module U203 $end
+$var wire 1 f& A $end
+$var wire 1 e& B $end
+$var wire 1 h$ Y $end
+$var wire 1 Y0 I0_out $end
+$upscope $end
+
+$scope module U204 $end
+$var wire 1 Q A $end
+$var wire 1 P B $end
+$var wire 1 N C $end
+$var wire 1 g& Y $end
+$var wire 1 Z0 I0_out $end
+$var wire 1 [0 I1_out $end
+$upscope $end
+
+$scope module U205 $end
+$var wire 1 T& A $end
+$var wire 1 S& B $end
+$var wire 1 g& C $end
+$var wire 1 h& Y $end
+$var wire 1 \0 I0_out $end
+$var wire 1 ]0 I1_out $end
+$upscope $end
+
+$scope module U206 $end
+$var wire 1 K# A $end
+$var wire 1 J# B $end
+$var wire 1 L# Y $end
+$var wire 1 ^0 I0_out $end
+$upscope $end
+
+$scope module U207 $end
+$var wire 1 { A $end
+$var wire 1 7 B $end
+$var wire 1 [# Y $end
+$var wire 1 _0 I0_out $end
+$upscope $end
+
+$scope module U208 $end
+$var wire 1 8! A $end
+$var wire 1 9 B $end
+$var wire 1 ># Y $end
+$var wire 1 `0 I0_out $end
+$upscope $end
+
+$scope module U209 $end
+$var wire 1 D# A $end
+$var wire 1 C# B $end
+$var wire 1 G# Y $end
+$var wire 1 a0 I0_out $end
+$upscope $end
+
+$scope module U210 $end
+$var wire 1 #! A $end
+$var wire 1 = B $end
+$var wire 1 \# Y $end
+$var wire 1 b0 I0_out $end
+$upscope $end
+
+$scope module U211 $end
+$var wire 1 Y# A $end
+$var wire 1 X# B $end
+$var wire 1 Z# Y $end
+$var wire 1 c0 I0_out $end
+$upscope $end
+
+$scope module U212 $end
+$var wire 1 :# A $end
+$var wire 1 9# B $end
+$var wire 1 ;# Y $end
+$var wire 1 d0 I0_out $end
+$upscope $end
+
+$scope module U213 $end
+$var wire 1 8# A $end
+$var wire 1 7# B $end
+$var wire 1 @# Y $end
+$var wire 1 e0 I0_out $end
+$upscope $end
+
+$scope module U214 $end
+$var wire 1 I# A $end
+$var wire 1 H# B $end
+$var wire 1 P# Y $end
+$var wire 1 f0 I0_out $end
+$upscope $end
+
+$scope module U215 $end
+$var wire 1 w$ A $end
+$var wire 1 N# B $end
+$var wire 1 O# Y $end
+$var wire 1 g0 I0_out $end
+$upscope $end
+
+$scope module U216 $end
+$var wire 1 [# A $end
+$var wire 1 \# B $end
+$var wire 1 ]# Y $end
+$var wire 1 h0 I0_out $end
+$upscope $end
+
+$scope module U217 $end
+$var wire 1 \# A $end
+$var wire 1 +$ B $end
+$var wire 1 ,$ Y $end
+$var wire 1 i0 I0_out $end
+$upscope $end
+
+$scope module U218 $end
+$var wire 1 f# A $end
+$var wire 1 '& B $end
+$var wire 1 -$ Y $end
+$var wire 1 j0 I0_out $end
+$upscope $end
+
+$scope module U219 $end
+$var wire 1 _# A $end
+$var wire 1 ^# B $end
+$var wire 1 `# Y $end
+$var wire 1 k0 I0_out $end
+$upscope $end
+
+$scope module U220 $end
+$var wire 1 V& A $end
+$var wire 1 (& B $end
+$var wire 1 *$ Y $end
+$var wire 1 l0 I0_out $end
+$upscope $end
+
+$scope module U221 $end
+$var wire 1 6! A $end
+$var wire 1 7 B $end
+$var wire 1 5# C $end
+$var wire 1 8# Y $end
+$var wire 1 m0 I0_out $end
+$var wire 1 n0 I1_out $end
+$upscope $end
+
+$scope module U222 $end
+$var wire 1 M# A $end
+$var wire 1 L# B $end
+$var wire 1 N# Y $end
+$var wire 1 o0 I0_out $end
+$upscope $end
+
+$scope module U223 $end
+$var wire 1 @& A $end
+$var wire 1 A& B $end
+$var wire 1 E# Y $end
+$var wire 1 p0 I0_out $end
+$upscope $end
+
+$scope module U224 $end
+$var wire 1 B# A $end
+$var wire 1 A# B $end
+$var wire 1 I# Y $end
+$var wire 1 q0 I0_out $end
+$upscope $end
+
+$scope module U225 $end
+$var wire 1 4& A $end
+$var wire 1 5& B $end
+$var wire 1 U# Y $end
+$var wire 1 r0 I0_out $end
+$upscope $end
+
+$scope module U226 $end
+$var wire 1 0& A $end
+$var wire 1 1& B $end
+$var wire 1 V# Y $end
+$var wire 1 s0 I0_out $end
+$upscope $end
+
+$scope module U227 $end
+$var wire 1 )& A $end
+$var wire 1 *& B $end
+$var wire 1 X# Y $end
+$var wire 1 t0 I0_out $end
+$upscope $end
+
+$scope module U228 $end
+$var wire 1 "& A $end
+$var wire 1 #& B $end
+$var wire 1 9# Y $end
+$var wire 1 u0 I0_out $end
+$upscope $end
+
+$scope module U229 $end
+$var wire 1 |% A $end
+$var wire 1 }% B $end
+$var wire 1 Q# Y $end
+$var wire 1 v0 I0_out $end
+$upscope $end
+
+$scope module U230 $end
+$var wire 1 z% A $end
+$var wire 1 {% B $end
+$var wire 1 S# Y $end
+$var wire 1 w0 I0_out $end
