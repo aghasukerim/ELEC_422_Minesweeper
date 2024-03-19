@@ -60,17 +60,51 @@ if (restart == 1'b1) begin
                temp_decoded = 25'b0;                    // error, default case
           end
    end else if (alu) begin
-        // TODO: functionality of n_nearby mines
-        casez (x)
-          25'b0???00???00???00???00???0: begin // positions of column 2,3,4 (count from 1)
-               if (mines[temp_data_in - 1] == 1) begin
-                    n_nearby = n_nearby + 1;
-               end
-          default:
-               n_nearby = 0;
-          end
-
-        endcase
+     n_nearby = 0;                           // reset nearby counter each new data input
+     casez (temp_decoded)                    // separate by columns to ensure correct positions are checked
+       25'b0???00???00???00???00???0: begin  // check positions of column 2,3,4 (count from 1)
+            if (mines[temp_data_in - 6] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 4] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 1] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 1] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 4] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 6] == 1)
+                 n_nearby = n_nearby + 1;
+       end
+       25'b0000?0000?0000?0000?0000?: begin  // check positions of column 1
+            if (mines[temp_data_in - 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 4] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 1] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 6] == 1)
+                 n_nearby = n_nearby + 1;
+       end
+       25'b?0000?0000?0000?0000?0000: begin  // check positions of column 5
+            if (mines[temp_data_in - 6] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 1] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 4] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 5] == 1)
+                 n_nearby = n_nearby + 1;
+       end
+     endcase
         // compute the cleared cells
         temp_cleared = temp_cleared | temp_decoded;
         // perform 'bitwise-and' to see if a mine exploded (maybe use &&?)
