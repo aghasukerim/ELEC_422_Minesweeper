@@ -52,7 +52,6 @@ if (restart == 1'b1) begin
         mines = 25'b0000000001000000000101010;
         //mines = out_mines;
         gameover = 0;
-        n_nearby = 0;
    end else if (load) begin
         temp_data_in = data;
    end else if (decode) begin 
@@ -111,6 +110,8 @@ if (restart == 1'b1) begin
         temp_cleared = temp_cleared | temp_decoded;
         // perform 'bitwise-and' to see if a mine exploded (maybe use &&?)
         gameover = ((mines & temp_decoded) != 0);
+        if (gameover)
+             n_nearby = 0;
         win = (mines == ~temp_cleared); //check that all non-mine positions have been cleared
         if (win) begin
              global_score = global_score + 1;
