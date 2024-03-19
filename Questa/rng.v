@@ -29,7 +29,8 @@ module rng (in_clka, in_start, in_mult, in_increment, in_mines_num, in_place,
   reg [4:0] in_mines_num
 //-------------Output Ports Data Type------------------
   reg [24:0] out_mines;
-  reg [2:0] rng_done
+  reg [2:0] rng_done;
+  wire out_place_done;         
 //----------Code starts Here------------------------
  //--------Internal Variables-----------------------
  /*
