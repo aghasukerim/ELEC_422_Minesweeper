@@ -55,5 +55,8 @@ module rng (in_clka, in_start, in_mult, in_increment, in_mines_num, in_place, ou
   if (mine_count == in_mines_num) begin
     out_place_done = 1'b1;
     rng_done = {data_in, out_place_done, in_place};
+  end else begin
+    out_place_done = 1'b0;
+    rng_done = {data_in, out_place_done, in_place};
   end
 endmodule
