@@ -44,15 +44,14 @@ if (restart == 1'b1) begin
         win = 0;
         global_score = 0;
         n_nearby = 0;
-   /*
-   end else if (start) begin
-        // TODO: call the RNG placement for mines
-    //rng (in_clka, in_start == 1'b1, 2, 3, 5, out_mines);
-        mines = 25'b0000000001000000000101010;
-        //mines = out_mines;
-   */
    end else if (load) begin
         temp_data_in = data;
+        temp_decoded = 0;
+        temp_cleared = 0;
+        gameover = 0;
+        win = 0;
+        global_score = 0;
+        n_nearby = 0;        
    end else if (decode) begin 
         if (temp_data_in < 25) begin                   // if input data is valid
                temp_decoded = 1'b1 << temp_data_in;    // set bit at index of input data
