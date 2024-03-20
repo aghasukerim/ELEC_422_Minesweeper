@@ -99,7 +99,7 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 
-// Cycle 4
+// Cycle 5
 // generate a random value for the mines
 // first mine
 in_place = 0;
@@ -108,7 +108,7 @@ in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 4
+// Cycle 6
 // generate a random value for the mines
 // second mine
 in_clka = 0; in_clkb = 0; #10;
@@ -116,7 +116,7 @@ in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 4
+// Cycle 7
 // generate a random value for the mines
 // third mine
 in_clka = 0; in_clkb = 0; #10;
@@ -126,7 +126,7 @@ in_clka = 0; in_clkb = 1; #10
 
 // 1st round: input = 12
 
-// Cycle 5
+// Cycle 8
 // starteration done; Load user input
 in_data_in = 1;
 in_data = 12;
@@ -135,7 +135,7 @@ in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 6
+// Cycle 9
 // go to load state
 in_data_in = 0;
 in_clka = 0; in_clkb = 0; #10;
@@ -143,35 +143,35 @@ in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 7
+// Cycle 10
 // go to decode state
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 8
+// Cycle 11
 // Perform the decoding
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 9
+// Cycle 12
 // Go to ALU
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 10 
+// Cycle 13 
 // Perform the bitwise ops
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 11
+// Cycle 14
 // Go to display state
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
@@ -179,14 +179,14 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 
-// Cycle 12
+// Cycle 15
 // Display the board
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 13
+// Cycle 16
 // Go back to the loop
 // Wait for user input
 in_clka = 0; in_clkb = 0; #10;
@@ -196,7 +196,7 @@ in_clka = 0; in_clkb = 1; #10
 
 // 2nd round: input = 24
 
-// Cycle 14
+// Cycle 17
 // new user input
 in_data_in = 1;
 in_data = 24;
@@ -205,7 +205,7 @@ in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 15
+// Cycle 18
 // go to load state
 in_data_in = 0;
 in_clka = 0; in_clkb = 0; #10;
@@ -213,28 +213,28 @@ in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 16
+// Cycle 19
 // go to decode state
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 17
+// Cycle 20
 // Go to ALU
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 18
+// Cycle 21
 // Perform the bitwise ops
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// Cycle 19
+// Cycle 22
 // Go to display state
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
@@ -242,8 +242,115 @@ in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
 
-// Cycle 20
+// Cycle 23
 // Display the board
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// New difficulty: 2 mines 
+
+// Cycle 24
+// Load the mines
+in_restart = 0;
+in_place = 1; 
+in_n_mines = 2;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 25
+// initialize the `mines` bitvector
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 26
+// generate a random value for the mines
+// first mine
+in_place = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 27
+// generate a random value for the mines
+// second mine
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// 1st round: input = 12
+
+// Cycle 28
+// starteration done; Load user input
+in_data_in = 1;
+in_data = 12;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 29
+// go to load state
+in_data_in = 0;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 30
+// go to decode state
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 31
+// Perform the decoding
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 32
+// Go to ALU
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 33 
+// Perform the bitwise ops
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 34
+// Go to display state
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+
+// Cycle 35
+// Display the board
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 1; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 0; #10;
+in_clka = 0; in_clkb = 1; #10
+
+// Cycle 36
+// Go back to the loop
+// Wait for user input
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
