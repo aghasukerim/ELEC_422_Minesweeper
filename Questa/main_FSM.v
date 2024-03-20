@@ -4,14 +4,14 @@
 // File Name   : minesweeper_FSM.v
 // Function    : 2 Phase Clock minesweeper_FSM
 //-----------------------------------------------------
-module main_FSM (clka, clkb, restart, state, place, start, place_done, data_in, data, load, decode, decode_done, alu, alu_done, gameover, display, display_done);
+module main_FSM (clka, clkb, restart, state, place, start, place_done, data_in, data, load, decode, alu, alu_done, gameover, display, display_done);
 //-------------Input Ports-----------------------------
-input   clka, clkb, restart, place, place_done, data_in, decode_done, alu_done, gameover, display_done;
+input   clka, clkb, restart, place, place_done, data_in, alu_done, gameover, display_done;
 input [4:0] data;
 //-------------Output Ports----------------------------
 output  state, start, load, decode, alu, display;
 //-------------Input ports Data Type-------------------
-wire    clka, clkb, restart, place, place_done, data_in, decode_done, alu_done, gameover, display_done;
+wire    clka, clkb, restart, place, place_done, data_in, alu_done, gameover, display_done;
 //-------------Output Ports Data Type------------------
 reg     start; // data path can place the mines on the board
 reg     load; // data path can load the user input
@@ -30,12 +30,16 @@ wire  [SIZE-1:0]          temp_state; 	// Internal wire for output of function
 reg   [SIZE-1:0]          next_state; 	// Temporary reg to hold next state to
 					// update state on output
 //----------Code startes Here------------------------
-assign temp_state = fsm_function(state, place, data_in);
+assign temp_state = fsm_function(state, data_in, place, place_done, alu_done, gameover, display_done);
 //----------Function for Combinational Logic to read inputs -----------
 function [SIZE-1:0] fsm_function;
   input  [SIZE-1:0] state;
+  input  data_in;
   input  place;   
-  input data_in;
+  input  place_done;
+  input  alu_done;
+  input  gameover;
+  input  display_done;
 
 case(state)
    IDLE: 

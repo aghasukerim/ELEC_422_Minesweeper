@@ -1,64 +1,71 @@
 //-----------------------------------------------------
 // Design Name : RNG
 // File Name   : rng.v
-// Function    : Pseudo-Random Number Generator to compute placement of mines
+// Function    : Pseudo-Random Number starterator to compute placement of mines
 //-----------------------------------------------------
-module rng (in_clka, in_start, in_mult, in_increment, in_mines_num, in_place, 
-            out_place_done, data_in, rng_done , out_mines);
+module rng (clka, clkb, restart, start, mult, incr, n_mines, place_done, mines, temp_index, temp_mine_cnt);
 //-------------Input Ports-----------------------------
-  input   in_clka, in_start, in_place, data_in;
- //input  in_mult, in_increment, in_mines_num;
-  input  [4:0] in_mult;
-  input  [4:0] in_increment;
-  input  [4:0] in_mines_num;
+  input   clka, clkb, restart, start;
+  input  [4:0] mult;
+  input  [4:0] incr;
+  input  [4:0] n_mines;
  //in_param: [b2,b1,b0]
  //in_mult <-- multiplier ('a')
- //in_increment <-- increment ('c')
+ //in_incr <-- increment ('c')
  //in_modulus <-- modulus ('m')
  //For the equation: X[n+1] = (a*X[n] + c) mod m
 //-------------Output Ports----------------------------
-  output [2:0] rng_done;
-  output out_place_done;
-  output [24:0] out_mines;
+  output  place_done;
+  output [24:0] mines;
+  output [4:0] temp_index;
+  output [4:0] temp_mine_cnt;
 //-------------Input ports Data Type-------------------
-  wire   in_clka, in_start in_place, in_place_done, data_in;
-  //integer in_mult, in_increment, in_mines_num;
-  reg [2:0] in_mult;
-  reg [4:0] in_increment;
-  reg [4:0] in_modulus;
-  reg [4:0] in_mines_num
+  wire   clka, start;
+  wire [4:0] mult;
+  wire [4:0] incr;
+  wire [4:0] n_mines;
 //-------------Output Ports Data Type------------------
-  reg [24:0] out_mines;
-  reg [2:0] rng_done;
-  wire out_place_done;         
+  reg [24:0] mines;
+  reg place_done;
 //----------Code starts Here------------------------
  //--------Internal Variables-----------------------
- /*
- Holds randomly generated integer (representing index of out_mines)
- */
-  //integer random_index;
- //Randomly generated integer of a given iteration of the "for" loop below
-   reg [24:0] temp_index;
-   reg [4:0] mine_count; //Tracks the number of mines that have been placed.
- //-------------------------------------------------
+  reg [4:0]  temp_index;
+  reg [4:0]  temp_mine_cnt; // Tracks the number of mines that have been placed.
+  reg temp_gen;
 
  //------------Initializations-------------
- random
  //----------------------------------------
- always @ (negedge clka) begin
-  if (start == 1'b1) begin
-   out_mines = 25'b0;
-   temp_index = (((in_mult & random_index) | in_increment) % 25);
-   out_mines[temp_index] = 1'b1;
-   random_index = temp_index; // Holds value of temp_index to be used in next iteration
-   mine_count = mine_count + 1;
-  end
- end
-  if (mine_count == in_mines_num) begin
-    out_place_done = 1'b1;
-    rng_done = {data_in, out_place_done, in_place};
-  end else begin
-    out_place_done = 1'b0;
-    rng_done = {data_in, out_place_done, in_place};
-  end
+ always @ (negedge clka)
+begin
+if (restart == 1'b1) begin
+        mines = 0;
+        temp_index = 0;
+        temp_mine_cnt = 0;
+   end else if (start) begin
+           mines = 0;
+           temp_mine_cnt = 0;
+   end else if (start | temp_gen) begin
+           temp_index = (((mult * temp_index) + incr) % 25);
+           mines[temp_index] = 1'b1;
+           temp_mine_cnt = temp_mine_cnt + 1;
+   end else begin
+        temp_mine_cnt = 0;
+   end
+end
+
+always @ (negedge clkb)
+begin
+if (restart == 1'b1) begin
+        place_done = 1'b0;
+        temp_gen = 1'b0;
+    end else if (start) begin
+        temp_gen = 1'b1;
+    end else if (temp_gen & (temp_mine_cnt == n_mines)) begin
+        place_done = 1'b1;
+        temp_gen = 1'b0;
+    end else begin
+        place_done = 1'b0;
+    end
+end
+
 endmodule
