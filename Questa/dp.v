@@ -63,21 +63,21 @@ if (restart == 1'b1) begin
      n_nearby = 0;                           // reset nearby counter each new data input
      casez (temp_decoded)                    // separate by columns to ensure correct positions are checked
        25'b0???00???00???00???00???0: begin  // check positions of column 2,3,4 (count from 1)
-            if (mines[temp_data_in - 6] == 1)
+            if (mines[temp_data_in - 6] == 1)// top left neighbor
                  n_nearby = n_nearby + 1;
-            if (mines[temp_data_in - 5] == 1)
+            if (mines[temp_data_in - 5] == 1)// top middle neighbor
                  n_nearby = n_nearby + 1;
-            if (mines[temp_data_in - 4] == 1)
+            if (mines[temp_data_in - 4] == 1)// top right neighbor
                  n_nearby = n_nearby + 1;
-            if (mines[temp_data_in - 1] == 1)
+            if (mines[temp_data_in - 1] == 1)// left neighbor
                  n_nearby = n_nearby + 1;
-            if (mines[temp_data_in + 1] == 1)
+            if (mines[temp_data_in + 1] == 1)// right neighbor
                  n_nearby = n_nearby + 1;
-            if (mines[temp_data_in + 4] == 1)
+            if (mines[temp_data_in + 4] == 1)// bottom left neighbor
                  n_nearby = n_nearby + 1;
-            if (mines[temp_data_in + 5] == 1)
+            if (mines[temp_data_in + 5] == 1)// bottom middle neighbor
                  n_nearby = n_nearby + 1;
-            if (mines[temp_data_in + 6] == 1)
+            if (mines[temp_data_in + 6] == 1)// bottom right neighbor
                  n_nearby = n_nearby + 1;
        end
        25'b0000?0000?0000?0000?0000?: begin  // check positions of column 1
