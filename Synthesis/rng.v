@@ -1,43 +1,71 @@
 //-----------------------------------------------------
 // Design Name : RNG
 // File Name   : rng.v
-//
-// Function    : Pseudo-Random Number Generator to compute placement of mines
+// Function    : Pseudo-Random Number starterator to compute placement of mines
 //-----------------------------------------------------
-module rng (in_clka, in_start, in_mult, in_increment, in_modulus, in_mines_num, out_mines);
+module rng (clka, clkb, restart, start, mult, incr, n_mines, place_done, mines, temp_index, temp_mine_cnt);
 //-------------Input Ports-----------------------------
-input   in_clka, in_start;
- input    in_mult;
- input    in_increment;
- input    in_modulus;
- input    in_mines_num;
+  input   clka, clkb, restart, start;
+  input  [4:0] mult;
+  input  [4:0] incr;
+  input  [4:0] n_mines;
  //in_param: [b2,b1,b0]
  //in_mult <-- multiplier ('a')
- //in_increment <-- increment ('c')
+ //in_incr <-- increment ('c')
  //in_modulus <-- modulus ('m')
  //For the equation: X[n+1] = (a*X[n] + c) mod m
 //-------------Output Ports----------------------------
- output  [24:0] out_mines;
+  output  place_done;
+  output [24:0] mines;
+  output [4:0] temp_index;
+  output [4:0] temp_mine_cnt;
 //-------------Input ports Data Type-------------------
-wire    in_clka, in_start, in_mult, in_increment, in_modulus, in_mines_num;
+  wire   clka, start;
+  wire [4:0] mult;
+  wire [4:0] incr;
+  wire [4:0] n_mines;
 //-------------Output Ports Data Type------------------
-reg [24:0] mines;
+  reg [24:0] mines;
+  reg place_done;
 //----------Code starts Here------------------------
-/* always @ (negedge clka)
- begin
-  if (start == 1'b1) begin
-   out_mines = 25'b0;
-   for (i=-1; i< in_mines_num; i = i + 1) begin
-    if (i == -1) begin
-     out_mines[0] = (((in_mult) + in_increment) % in_modulus);
+ //--------Internal Variables-----------------------
+  reg [4:0]  temp_index;
+  reg [4:0]  temp_mine_cnt; // Tracks the number of mines that have been placed.
+  reg temp_gen;
+
+ //------------Initializations-------------
+ //----------------------------------------
+ always @ (negedge clka)
+begin
+if (restart == 1'b1) begin
+        mines = 0;
+        temp_index = 0;
+        temp_mine_cnt = 0;
+   end else if (start) begin
+           mines = 0;
+           temp_mine_cnt = 0;
+   end else if (start | temp_gen) begin
+           temp_index = (((mult * temp_index) + incr) % 25);
+           mines[temp_index] = 1'b1;
+           temp_mine_cnt = temp_mine_cnt + 1;
+   end else begin
+        temp_mine_cnt = 0;
+   end
+end
+
+always @ (negedge clkb)
+begin
+if (restart == 1'b1) begin
+        place_done = 1'b0;
+        temp_gen = 1'b0;
+    end else if (start) begin
+        temp_gen = 1'b1;
+    end else if (temp_gen & (temp_mine_cnt == n_mines)) begin
+        place_done = 1'b1;
+        temp_gen = 1'b0;
     end else begin
-     out_mines[i+1] = (((in_mult * out_mines[i]) + in_increment) % in_modulus);
+        place_done = 1'b0;
     end
-    //Rearranges the out_mines to ensure
-    for (i=0; i<in_mines_num; i= i + 1) begin
-     out_mines[i] = out_mines[i + ({$random}%25)]
-    end
-   end 
-  end
- end 
-*/endmodule
+end
+
+endmodule

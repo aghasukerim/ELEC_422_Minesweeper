@@ -5,24 +5,23 @@
 //-----------------------------------------------------
 //
 //
-module dp (clka, clkb, restart, start, place_done, mines, load, data, temp_data_in, decode, decode_done, alu, alu_done, gameover,
+module dp (clka, clkb, restart, start, mines, load, data, temp_data_in, decode, alu, alu_done, gameover,
  win, global_score, n_nearby, temp_decoded, temp_cleared, display, display_done);
 //-----------Input Ports---------------
 input clka, clkb, restart, start, load, decode, alu, display;
 input [4:0] data;
+input [24:0] mines;
 //-----------Output Ports---------------
-output place_done, decode_done, alu_done, display_done, gameover, win;
-output [24:0] mines;
+output alu_done, display_done, gameover, win;
 output [4:0] temp_data_in;
 output [24:0] temp_decoded;
 output [24:0] temp_cleared;
 output [31:0] global_score;
 output [1:0] n_nearby;
 //------------Internal Variables--------
-reg     place_done;
-reg     [24:0] mines; // mine positions
+//reg     place_done;
+//reg     [24:0] mines; // mine positions
 reg     [4:0] temp_data_in; // encoded user input
-reg     decode_done;
 reg     [24:0] temp_decoded; // decoded user input
 reg     [24:0] temp_cleared; // cleared cells
 reg     [31:0] global_score; //track number of total wins
@@ -37,7 +36,7 @@ reg     display_done; // display is done
 always @ (negedge clka)
 begin
 if (restart == 1'b1) begin
-        mines = 0;
+        //mines = 0;
         temp_data_in = 0;
         temp_decoded = 0;
         temp_cleared = 0;
@@ -45,12 +44,14 @@ if (restart == 1'b1) begin
         win = 0;
         global_score = 0;
         n_nearby = 0;
-
-   end else if (start) begin
-        // TODO: call the RNG placement for mines
-        mines = 24'b001010001000000000100000;
    end else if (load) begin
         temp_data_in = data;
+        temp_decoded = 0;
+        temp_cleared = 0;
+        gameover = 0;
+        win = 0;
+        global_score = 0;
+        n_nearby = 0;        
    end else if (decode) begin 
         if (temp_data_in < 25) begin                   // if input data is valid
                temp_decoded = 1'b1 << temp_data_in;    // set bit at index of input data
@@ -58,16 +59,62 @@ if (restart == 1'b1) begin
                temp_decoded = 25'b0;                    // error, default case
           end
    end else if (alu) begin
-        // TODO: functionality of n_nearby mines
-        n_nearby = 2'b01;
+     n_nearby = 0;                           // reset nearby counter each new data input
+     casez (temp_decoded)                    // separate by columns to ensure correct positions are checked
+       25'b0???00???00???00???00???0: begin  // check positions of column 2,3,4 (count from 1)
+            if (mines[temp_data_in - 6] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 4] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 1] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 1] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 4] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 6] == 1)
+                 n_nearby = n_nearby + 1;
+       end
+       25'b0000?0000?0000?0000?0000?: begin  // check positions of column 1
+            if (mines[temp_data_in - 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 4] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 1] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 6] == 1)
+                 n_nearby = n_nearby + 1;
+       end
+       25'b?0000?0000?0000?0000?0000: begin  // check positions of column 5
+            if (mines[temp_data_in - 6] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 5] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in - 1] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 4] == 1)
+                 n_nearby = n_nearby + 1;
+            if (mines[temp_data_in + 5] == 1)
+                 n_nearby = n_nearby + 1;
+       end
+     endcase
         // compute the cleared cells
         temp_cleared = temp_cleared | temp_decoded;
         // perform 'bitwise-and' to see if a mine exploded (maybe use &&?)
-        gameover = ((mines & temp_decoded) != 0); // weird here: it should be mines & temp_decoded != 0 but it's complemented
+        gameover = ((mines & temp_decoded) != 0);
+        if (gameover)
+            n_nearby = 0;
         win = (mines == ~temp_cleared); //check that all non-mine positions have been cleared
         if (win) begin
              global_score = global_score + 1;
              gameover = 1; // if you win, also gameover
+             n_nearby = 0;
         end
    end else if (display) begin
         // display
@@ -77,34 +124,22 @@ end
 always @ (negedge clkb)
 begin
 if (restart == 1'b1) begin
-        place_done = 0;
-        decode_done = 0;
         alu_done = 0;
         display_done = 0;
    end else if (start) begin 
-        place_done = 1;
-        decode_done = 0;
         alu_done = 0;
         display_done = 0;
    end else if (load) begin
-        place_done = 0;
-        decode_done = 0;
         alu_done = 0;
         display_done = 0;
    end else if (decode) begin 
-        place_done = 0;
-        decode_done = 1;
         alu_done = 0;
         display_done = 0;
    end else if (alu) begin
-        place_done = 0;
         alu_done = 1;
-        decode_done = 0;
         display_done = 0;
    end else if (display) begin
-        place_done = 0;
         alu_done = 0;
-        decode_done = 0;
         display_done = 1;
    end
 end

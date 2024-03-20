@@ -6,26 +6,26 @@ Report : timing
         -max_paths 1
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Feb 27 21:42:30 2024
+Date   : Tue Mar 19 20:32:01 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
 Wire Load Model Mode: top
 
-  Startpoint: main/state_reg[0]
+  Startpoint: dp_ALU/temp_data_in_reg[0]
               (falling edge-triggered flip-flop)
-  Endpoint: out_state_main[0]
+  Endpoint: out_temp_data_in[0]
             (output port clocked by vclk)
   Path Group: (none)
   Path Type: max
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  main/state_reg[0]/CLK (DFFNEGX1)         0.00       0.00 f
-  main/state_reg[0]/Q (DFFNEGX1)           0.65       0.65 f
-  out_state_main[0] (out)                  0.00       0.65 f
-  data arrival time                                   0.65
-  -----------------------------------------------------------
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  dp_ALU/temp_data_in_reg[0]/CLK (DFFNEGX1)               0.00       0.00 f
+  dp_ALU/temp_data_in_reg[0]/Q (DFFNEGX1)                 1.05       1.05 f
+  out_temp_data_in[0] (out)                               0.00       1.05 f
+  data arrival time                                                  1.05
+  --------------------------------------------------------------------------
   (Path is unconstrained)
 
 

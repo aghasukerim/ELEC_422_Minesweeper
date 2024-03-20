@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version U-2022.12-SP7 for linux64 -- Oct 10, 2023
-#@ # Date:   Tue Feb 27 21:42:26 2024
-#@ # Run by: afl5@zorite.clear.rice.edu
+#@ # Date:   Tue Mar 19 20:31:52 2024
+#@ # Run by: afl5@borax.clear.rice.edu
 #@ 
 
 source /clear/apps/synopsys-2023/syn/latest/admin/setup/.synopsys_dc.setup
@@ -8691,7 +8691,7 @@ source -echo -verbose /storage-home/a/afl5/elec-527/ELEC_422_Minesweeper/Synthes
 #@ #/* Edit this part only of the file.                                     */
 #@ #/* Add all verilog files, separated by spaces after keyword "list"      */
 #@ 
-#@ set my_verilog_files [list dp.v main_FSM.v top_module.v]
+#@ set my_verilog_files [list dp.v rng.v main_FSM.v top_module.v]
 #@ 
 #@ #/* Top-level Module Name update                            */
 #@ set my_toplevel top_module
