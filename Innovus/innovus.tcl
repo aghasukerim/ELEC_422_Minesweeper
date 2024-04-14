@@ -1,8 +1,8 @@
 ##################################################################
 #                                                     
-#  Innovus Command File - updated Feb. 22, 2018 for ELEC 422/527
-#  Run the design through Innovus 22.14
-#  Updated for Innovuse  Feb. 5, 2024
+#  Encounter Command File - updated Feb. 22, 2018 for ELEC 422/527
+#  Run the design through Encounter for version 14
+#  Minor text typo update Feb. 12, 2019
 #                                                     
 ##################################################################
 # Initializing commands
@@ -19,8 +19,10 @@ set init_top_cell "top_module"
 ###################################################################
 #
 # No need to change anything below - standard design flow steps
-# See note below about flooPlan is density error occurs
+# IMPORTANT - See note below about floorPlan if density error occurs
 #
+###################################################################
+###################################################################
 #
 # Set location of Oklahoma State cell library root at Rice U.
 set OSUcells_cad "/clear/apps/osu/soc/cadence"
@@ -44,7 +46,7 @@ setIoFlowFlag 0
 # Leave 21 micron space around core for power and ground rings
 # If errors occur, such as "ENCSP-2002" or "ENCSP-2020" and the layout does not
 # complete, then reduce density from 0.8 in floorPlan to 0.6.
-floorPlan -r 1.0 0.8 21 21 21 21
+floorPlan -r 1.0 0.6 21 21 21 21
 
 uiSetTool select
 getIoFlowFlag
@@ -60,6 +62,8 @@ set sprCreateIeRingSpacing 1.2
 set sprCreateIeRingOffset 1.2
 set sprCreateIeRingThreshold 1.2
 set sprCreateIeRingJogDistance 1.2
+
+setPlaceMode -placeIoPins true
 
 setAddRingMode -stacked_via_top_layer metal3
 setAddRingMode -stacked_via_bottom_layer metal1
@@ -105,7 +109,7 @@ saveNetlist final.v
 saveDesign $init_top_cell.enc
 
 puts "**************************************"
-puts "* Innovus script finished          *"
+puts "* Encounter script finished          *"
 puts "*                                    *"
 puts "* Results:                           *"
 puts "* --------                           *"

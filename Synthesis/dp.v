@@ -16,7 +16,7 @@ output alu_done, display_done, gameover, win;
 output [4:0] temp_data_in;
 output [24:0] temp_decoded;
 output [24:0] temp_cleared;
-output [31:0] global_score;
+output [7:0] global_score;
 output [1:0] n_nearby;
 //------------Internal Variables--------
 //reg     place_done;
@@ -24,7 +24,7 @@ output [1:0] n_nearby;
 reg     [4:0] temp_data_in; // encoded user input
 reg     [24:0] temp_decoded; // decoded user input
 reg     [24:0] temp_cleared; // cleared cells
-reg     [31:0] global_score; //track number of total wins
+reg     [7:0] global_score; //track number of total wins
 reg     [1:0] n_nearby; //calculate # of mines directly next to chosen position
 reg     gameover; // did we explode a mine?
 reg     win; // calculate if user has won
@@ -44,14 +44,12 @@ if (restart == 1'b1) begin
         win = 0;
         global_score = 0;
         n_nearby = 0;
-   end else if (load) begin
-        temp_data_in = data;
-        temp_decoded = 0;
+   end else if (start) begin
         temp_cleared = 0;
         gameover = 0;
         win = 0;
-        global_score = 0;
-        n_nearby = 0;        
+   end else if (load) begin
+        temp_data_in = data;
    end else if (decode) begin 
         if (temp_data_in < 25) begin                   // if input data is valid
                temp_decoded = 1'b1 << temp_data_in;    // set bit at index of input data

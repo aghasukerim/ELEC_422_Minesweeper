@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Tue Mar 19 20:41:05 2024                
+#  Created on Sun Apr 14 16:54:25 2024                
 #                                                     
 #######################################################
 
@@ -27,7 +27,7 @@ init_design
 saveDesign top_module.enc
 getIoFlowFlag
 setIoFlowFlag 0
-floorPlan -r 1.0 0.8 21 21 21 21
+floorPlan -r 1.0 0.6 21 21 21 21
 uiSetTool select
 getIoFlowFlag
 fit
@@ -41,6 +41,7 @@ set sprCreateIeRingSpacing 1.2
 set sprCreateIeRingOffset 1.2
 set sprCreateIeRingThreshold 1.2
 set sprCreateIeRingJogDistance 1.2
+setPlaceMode -placeIoPins true
 setAddRingMode -stacked_via_top_layer metal3
 setAddRingMode -stacked_via_bottom_layer metal1
 addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -center 1 -type core_rings -jog_distance 1.8 -threshold 1.8 -nets {gnd vdd} -follow core -layer {bottom metal1 top metal1 right metal2 left metal2} -width 6.0 -spacing 1.2 -offset 1.8
@@ -161,9 +162,17 @@ getPlaceMode -quiet -place_global_exp_inverter_rewiring
 getPlaceMode -ignoreUnproperPowerInit -quiet
 getPlaceMode -quiet -expSkipGP
 setDelayCalMode -engine feDc
+unsetPinConstraint -edge -pin * -cell *
 psp::embedded_egr_init_
 psp::embedded_egr_term_
 scanReorder
+getExtractRCMode -relative_c_th -quiet
+getExtractRCMode -coupling_c_th -quiet
+getExtractRCMode -total_c_th -quiet
+getDesignMode -pessimisticMode -quiet
+getExtractRCMode -lefTechFileMap -quiet
+getExtractRCMode -turboReduce -quiet
+getExtractRCMode -coupled -quiet
 setDelayCalMode -engine aae
 all_setup_analysis_views
 getPlaceMode -quiet -tdgpAdjustNetWeightBySlack
@@ -262,3 +271,4 @@ streamOut final.gds -mapFile /clear/apps/osu/soc/cadence/flow/ami05/gds2_encount
 saveNetlist final.v
 saveDesign top_module.enc
 set enc_check_rename_command_name 1
+win

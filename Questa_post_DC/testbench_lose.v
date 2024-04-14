@@ -1,31 +1,31 @@
 //-----------------------------------------------------
 //// Design Name : Testbench for top_module
 //// File Name   : top_module_tb.v
-//// Function    : Testbench for top module and total project.
+//// Function    : Testbench for top module in lose scenario.
 ////-----------------------------------------------------
 //
 //`timescale 1ns/10ps
-module top_module_tb();
+module top_module_lose_tb();
 
 // Inputs to top_module
 reg  in_clka, in_clkb, in_restart, in_place, in_data_in;
 reg  [4:0] in_data;
-reg  [4:0] in_mult;
-reg  [4:0]  in_incr; 
-reg  [4:0]  in_n_mines;
+reg  [2:0] in_mult;
+reg  [2:0]  in_incr; 
+reg  [2:0]  in_n_mines;
 // Outputs from top_module
 wire [3:0] out_state_main;
 wire out_start, out_place_done, out_load, out_decode;
 wire [24:0] out_mines;
 wire [4:0] out_temp_data_in;
 wire out_alu, out_alu_done, out_gameover, out_win;
-wire [31:0] out_global_score;
+wire [7:0] out_global_score;
 wire [1:0] out_n_nearby;
 wire [24:0] out_temp_decoded;
 wire [24:0] out_temp_cleared;
 wire out_display, out_display_done;
 wire [4:0] out_temp_index;
-wire [4:0] out_temp_mine_cnt;
+wire [2:0] out_temp_mine_cnt;
 
 
 //create a top FSM system instance.
@@ -74,8 +74,8 @@ in_restart = 1;
 in_place = 0;
 in_data_in = 0;
 in_data = 0;
-in_mult = 8;
-in_incr = 13;
+in_mult = 7;
+in_incr = 6;
 in_n_mines = 3;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
@@ -194,12 +194,12 @@ in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 1; #10
 
-// 2nd round: input = 24
+// 2nd round: input = 17
 
 // Cycle 17
 // new user input
 in_data_in = 1;
-in_data = 24;
+in_data = 17;
 in_clka = 0; in_clkb = 0; #10;
 in_clka = 1; in_clkb = 0; #10;
 in_clka = 0; in_clkb = 0; #10;
@@ -289,7 +289,7 @@ in_clka = 0; in_clkb = 1; #10
 // 1st round: input = 12
 
 // Cycle 28
-// starteration done; Load user input
+// start done; Load user input
 in_data_in = 1;
 in_data = 12;
 in_clka = 0; in_clkb = 0; #10;

@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : top_module
 Version: U-2022.12-SP7
-Date   : Tue Mar 19 20:32:01 2024
+Date   : Sun Apr 14 16:43:16 2024
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells

@@ -12,22 +12,28 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -debugDB -voptargs=""+acc"" top_module_tb 
-# Start time: 20:27:10 on Mar 19,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# vsim -debugDB -voptargs=""+acc"" top_module_win_tb 
+# Start time: 16:00:26 on Apr 14,2024
+# ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.top_module_tb(fast)
+# Loading work.top_module_win_tb(fast)
 # Loading work.top_module(fast)
 # Loading work.main_FSM(fast)
 # Loading work.dp(fast)
 # Loading work.rng(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (3) for port 'out_temp_mine_cnt'. The port definition is at: top_module.v(10).
+#    Time: 0 ps  Iteration: 0  Instance: /top_module_win_tb/top File: testbench_win.v Line: 34
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'global_score'. The port definition is at: dp.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /top_module_win_tb/top/dp_ALU File: top_module.v Line: 74
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (5) for port 'temp_mine_cnt'. The port definition is at: rng.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /top_module_win_tb/top/dp_RNG File: top_module.v Line: 95
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
-add wave sim:/top_module_tb/*
+add wave sim:/top_module_win_tb/*
 run -all
-# ** Note: $stop    : testbench_top.v(364)
-#    Time: 1440 ns  Iteration: 0  Instance: /top_module_tb
-# Break in Module top_module_tb at testbench_top.v line 364
-# End time: 20:34:38 on Mar 19,2024, Elapsed time: 0:07:28
-# Errors: 0, Warnings: 1
+# ** Note: $stop    : testbench_win.v(208)
+#    Time: 8200 ns  Iteration: 0  Instance: /top_module_win_tb
+# Break in Module top_module_win_tb at testbench_win.v line 208
+# End time: 16:23:16 on Apr 14,2024, Elapsed time: 0:22:50
+# Errors: 0, Warnings: 4
