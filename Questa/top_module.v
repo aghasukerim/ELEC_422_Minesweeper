@@ -11,9 +11,9 @@ module top_module (in_clka, in_clkb, in_restart, in_mult, in_incr, in_n_mines, o
  
 //-------------Input Ports-----------------------------
 input   in_clka, in_clkb, in_restart, in_place, in_data_in;
-input   [4:0] in_n_mines;
-input   [4:0] in_mult;
-input   [4:0] in_incr;
+input   [2:0] in_n_mines;
+input   [2:0] in_mult;
+input   [2:0] in_incr;
 input   [4:0] in_data;
 //-------------Output Ports----------------------------
 output  [3:0] out_state_main; 
@@ -28,10 +28,10 @@ output [4:0] out_temp_index;
 output [4:0] out_temp_mine_cnt;
 //-------------Input ports Data Type-------------------
 wire    in_clka, in_clkb, in_restart; 
-wire    [4:0] in_n_mines;
+wire    [2:0] in_n_mines;
 wire    in_place, in_data_in;
-wire    [4:0] in_mult;
-wire    [4:0] in_incr;
+wire    [2:0] in_mult;
+wire    [2:0] in_incr;
 wire    [4:0] in_data;
 //-------------Output Ports Data Type------------------
 wire    [3:0] out_state_main;
@@ -44,7 +44,7 @@ wire    out_alu;
 wire    out_alu_done;
 wire    out_gameover;
 wire    out_win;
-wire    [31:0] out_global_score;
+wire    [7:0] out_global_score;
 wire    [24:0] out_temp_decoded;
 wire    [24:0] out_temp_cleared;
 wire    [1:0] out_n_nearby;
