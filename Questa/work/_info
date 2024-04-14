@@ -59,28 +59,29 @@ R7
 R8
 n@_opt2
 R9
+R3
 vdp
-Z10 2dp.v|main_FSM.v|rng.v|testbench_top.v|top_module.v
-Z11 !s110 1710897988
+Z10 2dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_win.v|top_module.v
+Z11 !s110 1713127917
 !i10b 1
-!s100 Ob7hWMfKV2`icTWO7NK@A0
-IzH^56E2>KTcjVM0BA2NcG1
+!s100 gdWP6`a=M?^HeioElA@^C3
+I;NTBcD92X;;=bQHHN^U@D1
 Z12 d/storage-home/a/afl5/elec-527/ELEC_422_Minesweeper/Questa
-Z13 w1710897985
+Z13 w1713127867
 8dp.v
 Fdp.v
-!i122 7
-L0 8 140
+!i122 9
+L0 8 138
 Z14 VDg1SIo80bB@j0V0VzS_@n1
 Z15 OL;L;2023.2;77
 r1
 !s85 0
 31
-Z16 !s108 1710897987.000000
-Z17 !s107 top_module.v|testbench_top.v|rng.v|main_FSM.v|dp.v|
-Z18 !s90 dp.v|main_FSM.v|rng.v|testbench_top.v|top_module.v|
+Z16 !s108 1713127917.000000
+!s107 top_module.v|testbench_win.v|testbench_lose.v|rng.v|main_FSM.v|dp.v|
+Z17 !s90 dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_win.v|top_module.v|
 !i113 0
-Z19 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z18 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R8
 vmain_FSM
 R10
@@ -89,10 +90,10 @@ R11
 !s100 =>ioOSGB_6Q1nRjJmkU;13
 IkFA?6DkacOEnE60[kG1JJ3
 R12
-Z20 w1710896614
-Z21 8main_FSM.v
-Z22 Fmain_FSM.v
-!i122 7
+w1710896614
+Z19 8main_FSM.v
+Z20 Fmain_FSM.v
+!i122 9
 L0 7 194
 R14
 R15
@@ -100,50 +101,50 @@ r1
 !s85 0
 31
 R16
+Z21 !s107 top_module.v|testbench_win.v|testbench_lose.v|rng.v|main_FSM.v|dp.v|
 R17
-R18
 !i113 0
-R19
+R18
 R8
 nmain_@f@s@m
 vrng
 R10
 R11
 !i10b 1
-!s100 ELXI?O_6GcHF[4=cA7G620
-ITCPW59TP<G9jQGoCP;`Vi3
+!s100 SP]j_ZXUQQeeEcn_bTdR43
+I@b>VBbGkAX9P`5ERbzj>j3
 R12
-R20
+R13
 8rng.v
 Frng.v
-R21
-R22
-!i122 7
-L0 6 66
+R19
+R20
+!i122 9
+L0 6 65
 R14
 R15
 r1
 !s85 0
 31
 R16
+R21
 R17
-R18
 !i113 0
-R19
+R18
 R8
 vtop_module
 R10
 R11
 !i10b 1
-!s100 G[eA7E5:hYgihR7;iRP<C2
-IUPkD@Co6_a[hLg2K<YKk62
+!s100 IF>4o]kXk9;mRg8>Z?2PR2
+I7zG3HHdf;dWe6HPRnNi>i1
 R12
-R20
+R13
 8top_module.v
 Ftop_module.v
-R21
-R22
-!i122 7
+R19
+R20
+!i122 9
 L0 7 102
 R14
 R15
@@ -151,33 +152,83 @@ r1
 !s85 0
 31
 R16
+R21
 R17
-R18
 !i113 0
-R19
+R18
 R8
-vtop_module_tb
+vtop_module_lose_tb
 R10
 R11
 !i10b 1
-!s100 5FUG23XZP^QK<OHQbR8gn2
-IU=>8loENeP;j4LYIjH2Kc0
+!s100 e^ekWL^BUnAzOdi2Cfg3f0
+I8am:?i>OIafj]9^co_g3h3
 R12
 R13
-8testbench_top.v
-Ftestbench_top.v
-R21
-R22
-!i122 7
-L0 8 359
+8testbench_lose.v
+Ftestbench_lose.v
+R19
+R20
+!i122 9
+Z22 L0 8 359
 R14
 R15
 r1
 !s85 0
 31
 R16
+R21
 R17
-R18
 !i113 0
+R18
+R8
+vtop_module_tb
+2dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_top.v|testbench_win.v|top_module.v
+!s110 1713127882
+!i10b 1
+!s100 5FUG23XZP^QK<OHQbR8gn2
+IU=>8loENeP;j4LYIjH2Kc0
+R12
+w1710897985
+8testbench_top.v
+Ftestbench_top.v
 R19
+R20
+!i122 8
+R22
+R14
+R15
+r1
+!s85 0
+31
+!s108 1713127881.000000
+!s107 top_module.v|testbench_win.v|testbench_top.v|testbench_lose.v|rng.v|main_FSM.v|dp.v|
+!s90 dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_top.v|testbench_win.v|top_module.v|
+!i113 0
+R18
+R8
+vtop_module_win_tb
+R10
+R11
+!i10b 1
+!s100 i7C2VWo>:XWZX`cTH7aL:3
+IC70CZaW9S?>9l@>Nagz_Y3
+R12
+R13
+8testbench_win.v
+Ftestbench_win.v
+R19
+R20
+!i122 9
+L0 8 203
+R14
+R15
+r1
+!s85 0
+31
+R16
+R21
+R17
+!i113 0
+R18
 R8
