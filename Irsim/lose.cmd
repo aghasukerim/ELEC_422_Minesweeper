@@ -10,7 +10,7 @@ vector in_n_mines in_n_mines\[2:0\]
 vector out_temp_data_in out_temp_data_in\[4:0\]
 vector out_n_nearby out_n_nearby\[1\] out_n_nearby\[0\]
 vector out_temp_index out_temp_index\[4:0\]
-vector out_temp_mine_cnt out_temp_mine_cnt\[4:0\]
+vector out_temp_mine_cnt out_temp_mine_cnt\[2:0\]
 vector out_mines out_mines\[24:0\]
 vector out_global_score out_global_score\[7:0\]
 vector out_temp_decoded out_temp_decoded\[24:0\]
@@ -32,9 +32,10 @@ V   	in_restart    	0 1 1 0 0	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 V	in_place	0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0
 V	in_data_in	0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
 V	in_data		0d0 0d0 0d0 0d0 0d0 0d0 0d0 0d0 0d12 0d12 0d12 0d12 0d12 0d12 0d12 0d12 0d12 0d24 0d24 0d24 0d24 0d24 0d24 0d24 0d24 0d24 0d24 0d24 0d12 0d12 0d12 0d12 0d12 0d12 0d12 0d12 0d12
-V	in_mult		0d0 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8 0d8
-V	in_incr		0d0 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13 0d13
+V	in_mult		0d0 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7 0d7
+V	in_incr		0d0 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6 0d6
 V	in_n_mines	0d0 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d3 0d2 0d2 0d2 0d2 0d2 0d2 0d2 0d2 0d2 0d2 0d2 0d2 0d2 0d2
+
 | Two phase clock with non-overlap period - same as Questa testbench
 clock in_clka 0 1 0 0
 clock in_clkb 0 0 0 1
