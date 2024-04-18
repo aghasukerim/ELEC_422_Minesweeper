@@ -28,13 +28,13 @@ ana out_display out_display_done
 ana out_temp_index out_temp_mine_cnt
 
 | Initialization
-V   in_restart  0 1 1 
-V	in_place	0 0 0
-V	in_data_in	0 0 0 
-V	in_data		0d0 0d0 0d0 
-V	in_mult		0d0 0d7 0d7 
-V	in_incr		0d0 0d6 0d6 
-V	in_n_mines	0d0 0d3 0d3
+V   in_restart  0 1 1 0 
+V	in_place	0 0 0 1
+V	in_data_in	0 0 0 0
+V	in_data		0d0 0d0 0d0  0d0
+V	in_mult		0d0 0d7 0d7  0d7
+V	in_incr		0d0 0d6 0d6  0d6
+V	in_n_mines	0d0 0d3 0d3  0d3
 clock in_clka 0 1 0 0
 clock in_clkb 0 0 0 1
 R
