@@ -1,17 +1,19 @@
 m255
 K4
 z2
-Z0 !s12c _opt
+Z0 !s12c _opt1
 Z1 !s99 nomlopt
-Z2 !s12c _opt2
+Z2 !s12c _opt
+R1
+Z3 !s12c _opt2
+R1
+R3
+R1
+R0
 R1
 R2
 R1
-!s12c _opt1
-R1
-R0
-R1
-R0
+R2
 R1
 !s11f vlog 2023.2 2023.04, Apr 11 2023
 13
@@ -20,48 +22,48 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z3 d/storage-home/a/afl5/elec-527/hw2/p3/Questa_post_DC
+Z4 d/storage-home/a/afl5/elec-527/hw2/p3/Questa_post_DC
 T_opt
 !s110 1713131303
 V=9193@_<h;f>cF8ZQ4]6C1
 04 17 4 work top_module_win_tb fast 0
 =1-d09466164d60-661c4f27-84a33-14a989
 R1
-Z4 !s12b OEM100
-Z5 !s124 OEM100
-Z6 o-quiet -auto_acc_if_foreign -work work -debugdb +acc
-Z7 tCvgOpt 0
+Z5 !s12b OEM100
+Z6 !s124 OEM100
+Z7 o-quiet -auto_acc_if_foreign -work work -debugdb +acc
+Z8 tCvgOpt 0
 n@_opt
-Z8 OL;O;2023.2;77
-T_opt1
-!s110 1708912149
-VOkIkfNKKM<UW8H=z]CkaP1
-Z9 04 13 4 work top_module_tb fast 0
-=1-3cfdfe22dd20-65dbee14-e4bd8-35a7aa
-R1
+Z9 OL;O;2023.2;77
 R4
+T_opt1
+!s110 1713369631
+V7aaQ[P]ZV=F<0:nS@U1=T1
+04 18 4 work top_module_lose_tb fast 0
+=1-4cd98f4b57d1-661ff21e-db1fd-fa3cb
+R1
 R5
 R6
 R7
-n@_opt1
 R8
-R3
+n@_opt1
+R9
 T_opt2
 !s110 1710898570
 VKIJ;FFKeYk_@m<Rag3V3i1
-R9
+04 13 4 work top_module_tb fast 0
 =1-3cfdfe22dd20-65fa3d87-1fc66-22d991
 R1
-R4
 R5
 R6
 R7
-n@_opt2
 R8
-R3
+n@_opt2
+R9
+R4
 vAND2X1
-Z10 2top_module.vh|osu05_stdcells.v|testbench_win.v
-Z11 !s110 1713131261
+Z10 2top_module.vh|osu05_stdcells.v|testbench_lose.v
+Z11 !s110 1713369596
 !i10b 1
 !s100 zeIHT4gS<ZW]zj?QdeB@33
 I`MS`YSkZ9AH6;VNe?[hR42
@@ -69,19 +71,19 @@ Z12 d/storage-home/a/afl5/elec-527/ELEC_422_Minesweeper/Questa_post_DC
 Z13 w1709089912
 Z14 8osu05_stdcells.v
 Z15 Fosu05_stdcells.v
-!i122 6
+!i122 8
 L0 3 22
 Z16 VDg1SIo80bB@j0V0VzS_@n1
 Z17 OL;L;2023.2;77
 r1
 !s85 0
 31
-Z18 !s108 1713131261.000000
-Z19 !s107 testbench_win.v|osu05_stdcells.v|top_module.vh|
-Z20 !s90 top_module.vh|osu05_stdcells.v|testbench_win.v|
+Z18 !s108 1713369596.000000
+Z19 !s107 testbench_lose.v|osu05_stdcells.v|top_module.vh|
+Z20 !s90 top_module.vh|osu05_stdcells.v|testbench_lose.v|
 !i113 0
 Z21 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R7
+R8
 n@a@n@d2@x1
 vAND2X2
 R10
@@ -93,7 +95,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 29 22
 R16
 R17
@@ -105,7 +107,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@a@n@d2@x2
 vAOI21X1
 R10
@@ -117,7 +119,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 55 28
 R16
 R17
@@ -129,7 +131,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@a@o@i21@x1
 vAOI22X1
 R10
@@ -141,7 +143,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 87 33
 R16
 R17
@@ -153,7 +155,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@a@o@i22@x1
 vBUFX2
 R10
@@ -165,7 +167,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 124 18
 R16
 R17
@@ -177,7 +179,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@b@u@f@x2
 vBUFX4
 R10
@@ -189,7 +191,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 146 18
 R16
 R17
@@ -201,7 +203,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@b@u@f@x4
 vCLKBUF1
 R10
@@ -213,7 +215,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 168 18
 R16
 R17
@@ -225,7 +227,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@c@l@k@b@u@f1
 vCLKBUF2
 R10
@@ -237,7 +239,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 190 18
 R16
 R17
@@ -249,7 +251,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@c@l@k@b@u@f2
 vCLKBUF3
 R10
@@ -261,7 +263,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 212 18
 R16
 R17
@@ -273,7 +275,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@c@l@k@b@u@f3
 vDFFNEGX1
 R10
@@ -285,7 +287,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 234 35
 R16
 R17
@@ -297,7 +299,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@d@f@f@n@e@g@x1
 vDFFPOSX1
 R10
@@ -309,7 +311,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 273 34
 R16
 R17
@@ -321,7 +323,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@d@f@f@p@o@s@x1
 vDFFSR
 R10
@@ -333,7 +335,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 311 64
 R16
 R17
@@ -345,7 +347,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@d@f@f@s@r
 vFAX1
 R10
@@ -357,7 +359,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 379 41
 R16
 R17
@@ -369,7 +371,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@f@a@x1
 vHAX1
 R10
@@ -381,7 +383,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 424 30
 R16
 R17
@@ -393,7 +395,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@h@a@x1
 vINVX1
 R10
@@ -405,7 +407,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 458 18
 R16
 R17
@@ -417,7 +419,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@i@n@v@x1
 vINVX2
 R10
@@ -429,7 +431,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 480 18
 R16
 R17
@@ -441,7 +443,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@i@n@v@x2
 vINVX4
 R10
@@ -453,7 +455,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 502 18
 R16
 R17
@@ -465,7 +467,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@i@n@v@x4
 vINVX8
 R10
@@ -477,7 +479,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 524 18
 R16
 R17
@@ -489,7 +491,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@i@n@v@x8
 vLATCH
 R10
@@ -501,7 +503,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 546 35
 R16
 R17
@@ -513,7 +515,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@l@a@t@c@h
 vMUX2X1
 R10
@@ -525,7 +527,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 585 27
 R16
 R17
@@ -537,7 +539,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@m@u@x2@x1
 vNAND2X1
 R10
@@ -549,7 +551,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 616 23
 R16
 R17
@@ -561,7 +563,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@n@a@n@d2@x1
 vNAND3X1
 R10
@@ -573,7 +575,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 643 27
 R16
 R17
@@ -585,7 +587,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@n@a@n@d3@x1
 vNOR2X1
 R10
@@ -597,7 +599,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 674 23
 R16
 R17
@@ -609,7 +611,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@n@o@r2@x1
 vNOR3X1
 R10
@@ -621,7 +623,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 701 27
 R16
 R17
@@ -633,7 +635,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@n@o@r3@x1
 vOAI21X1
 R10
@@ -645,7 +647,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 732 28
 R16
 R17
@@ -657,7 +659,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@o@a@i21@x1
 vOAI22X1
 R10
@@ -669,7 +671,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 764 33
 R16
 R17
@@ -681,7 +683,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@o@a@i22@x1
 vOR2X1
 R10
@@ -693,7 +695,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 801 22
 R16
 R17
@@ -705,7 +707,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@o@r2@x1
 vOR2X2
 R10
@@ -717,7 +719,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 827 22
 R16
 R17
@@ -729,7 +731,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@o@r2@x2
 vPADFC
 R10
@@ -741,7 +743,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1132 2
 R16
 R17
@@ -753,7 +755,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@p@a@d@f@c
 vPADGND
 R10
@@ -765,7 +767,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1135 2
 R16
 R17
@@ -777,7 +779,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@p@a@d@g@n@d
 vPADINC
 R10
@@ -789,7 +791,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 853 18
 R16
 R17
@@ -801,7 +803,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@p@a@d@i@n@c
 vPADINOUT
 R10
@@ -813,7 +815,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 875 29
 R16
 R17
@@ -825,7 +827,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@p@a@d@i@n@o@u@t
 vPADNC
 R10
@@ -837,7 +839,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1129 2
 R16
 R17
@@ -849,7 +851,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@p@a@d@n@c
 vPADOUT
 R10
@@ -861,7 +863,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 908 18
 R16
 R17
@@ -873,7 +875,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@p@a@d@o@u@t
 vPADVDD
 R10
@@ -885,7 +887,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1138 2
 R16
 R17
@@ -897,7 +899,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@p@a@d@v@d@d
 vTBUFX1
 R10
@@ -909,7 +911,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 930 25
 R16
 R17
@@ -921,7 +923,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@t@b@u@f@x1
 vTBUFX2
 R10
@@ -933,7 +935,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 959 25
 R16
 R17
@@ -945,7 +947,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@t@b@u@f@x2
 vtop_module
 R10
@@ -957,7 +959,7 @@ R12
 w1713131217
 8top_module.vh
 Ftop_module.vh
-!i122 6
+!i122 8
 L0 8 2059
 R16
 R17
@@ -969,7 +971,32 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
+vtop_module_lose_tb
+R10
+R11
+!i10b 1
+!s100 5zkU[QnJZ<mgJ_HjT;Pgg3
+Iz5;PNmkCNU<LKZDemnXEg1
+R12
+w1713369548
+8testbench_lose.v
+Ftestbench_lose.v
+R14
+R15
+!i122 8
+Z22 L0 8 359
+R16
+R17
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 0
+R21
+R8
 vtop_module_tb
 2top_module.vh|osu05_stdcells.v|testbench_top.v
 !s110 1710898527
@@ -983,7 +1010,7 @@ Ftestbench_top.v
 R14
 R15
 !i122 5
-L0 8 359
+R22
 R16
 R17
 r1
@@ -994,10 +1021,10 @@ r1
 !s90 top_module.vh|osu05_stdcells.v|testbench_top.v|
 !i113 0
 R21
-R7
+R8
 vtop_module_win_tb
-R10
-R11
+2top_module.vh|osu05_stdcells.v|testbench_win.v
+!s110 1713131261
 !i10b 1
 !s100 U5EkCdbg0dm^AzLI9VASc3
 ILoF@@B2]NWcz<]nZb8DEU1
@@ -1014,12 +1041,12 @@ R17
 r1
 !s85 0
 31
-R18
-R19
-R20
+!s108 1713131261.000000
+!s107 testbench_win.v|osu05_stdcells.v|top_module.vh|
+!s90 top_module.vh|osu05_stdcells.v|testbench_win.v|
 !i113 0
 R21
-R7
+R8
 Uudp_dff
 R10
 R11
@@ -1030,7 +1057,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1039 0
 R16
 R17
@@ -1042,7 +1069,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 Uudp_mux2
 R10
 R11
@@ -1053,7 +1080,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1110 0
 R16
 R17
@@ -1065,7 +1092,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 Uudp_rslat
 R10
 R11
@@ -1076,7 +1103,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1091 0
 R16
 R17
@@ -1088,7 +1115,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 Uudp_tlat
 R10
 R11
@@ -1099,7 +1126,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1065 0
 R16
 R17
@@ -1111,7 +1138,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 vXNOR2X1
 R10
 R11
@@ -1122,7 +1149,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 988 23
 R16
 R17
@@ -1134,7 +1161,7 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@x@n@o@r2@x1
 vXOR2X1
 R10
@@ -1146,7 +1173,7 @@ R12
 R13
 R14
 R15
-!i122 6
+!i122 8
 L0 1015 22
 R16
 R17
@@ -1158,5 +1185,5 @@ R19
 R20
 !i113 0
 R21
-R7
+R8
 n@x@o@r2@x1

@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Sun Apr 14 16:54:25 2024                
+#  Created on Wed Apr 17 19:31:14 2024                
 #                                                     
 #######################################################
 
@@ -27,7 +27,7 @@ init_design
 saveDesign top_module.enc
 getIoFlowFlag
 setIoFlowFlag 0
-floorPlan -r 1.0 0.6 21 21 21 21
+floorPlan -r 1.0 0.5 21 21 21 21
 uiSetTool select
 getIoFlowFlag
 fit
