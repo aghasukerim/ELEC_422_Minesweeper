@@ -1,0 +1,96 @@
+| (command line,1): p_in_mult: No such node or vector
+| (command line,1): p_in_incr: No such node or vector
+| (command line,1): out_state_main: No such node or vector
+| (command line,1): p_out_state_main: No such node or vector
+| (command line,1): out_start: No such node or vector
+| (command line,1): out_place_done: No such node or vector
+| (command line,1): out_load: No such node or vector
+| (command line,1): out_decode: No such node or vector
+| (command line,1): out_mines: No such node or vector
+| (command line,1): out_temp_data_in: No such node or vector
+| (command line,1): out_alu: No such node or vector
+| (command line,1): out_alu_done: No such node or vector
+| (command line,1): out_global_score: No such node or vector
+| (command line,1): out_temp_decoded: No such node or vector
+| (command line,1): p_out_global_score: No such node or vector
+| (command line,1): cleared_map: No such node or vector
+| (command line,1): out_display: No such node or vector
+| (command line,1): out_display_done: No such node or vector
+| (command line,1): out_temp_index: No such node or vector
+| (command line,1): out_temp_mine_cnt: No such node or vector
+| (command line,1): p_in_mult: No such node or vector
+| (command line,1): p_in_incr: No such node or vector
+| time = 40.000ns
+| time = 40.000ns
+| time = 80.000ns
+| time = 80.000ns
+| time = 120.000ns
+| time = 120.000ns
+| time = 160.000ns
+| time = 160.000ns
+| time = 200.000ns
+| time = 200.000ns
+| time = 240.000ns
+| time = 240.000ns
+| time = 280.000ns
+| time = 280.000ns
+| time = 320.000ns
+| time = 320.000ns
+| time = 360.000ns
+| time = 360.000ns
+| time = 400.000ns
+| time = 400.000ns
+| time = 440.000ns
+| time = 440.000ns
+| time = 480.000ns
+| time = 480.000ns
+| time = 520.000ns
+| time = 520.000ns
+| time = 560.000ns
+| time = 560.000ns
+| time = 600.000ns
+| time = 600.000ns
+| time = 640.000ns
+| time = 640.000ns
+| time = 680.000ns
+| time = 680.000ns
+| time = 720.000ns
+| time = 720.000ns
+| time = 760.000ns
+| time = 760.000ns
+| time = 800.000ns
+| time = 800.000ns
+| time = 840.000ns
+| time = 840.000ns
+| time = 880.000ns
+| time = 880.000ns
+| time = 920.000ns
+| time = 920.000ns
+| time = 960.000ns
+| time = 960.000ns
+| time = 1000.000ns
+| time = 1000.000ns
+| time = 1040.000ns
+| time = 1040.000ns
+| time = 1080.000ns
+| time = 1080.000ns
+| time = 1120.000ns
+| time = 1120.000ns
+| time = 1160.000ns
+| time = 1160.000ns
+| time = 1200.000ns
+| time = 1200.000ns
+| time = 1240.000ns
+| time = 1240.000ns
+| time = 1280.000ns
+| time = 1280.000ns
+| time = 1320.000ns
+| time = 1320.000ns
+| time = 1360.000ns
+| time = 1360.000ns
+| time = 1400.000ns
+| time = 1400.000ns
+| time = 1440.000ns
+| time = 1440.000ns
+| time = 1480.000ns
+| time = 1480.000ns
