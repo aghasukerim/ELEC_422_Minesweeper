@@ -1,19 +1,21 @@
 m255
 K4
 z2
-Z0 !s12c _opt
+Z0 !s12c _opt1
 Z1 !s99 nomlopt
-Z2 !s12c _opt2
+Z2 !s12c _opt
+R1
+Z3 !s12c _opt2
+R1
+R3
+R1
+R3
+R1
+R0
 R1
 R2
 R1
 R2
-R1
-!s12c _opt1
-R1
-R0
-R1
-R0
 R1
 !s11f vlog 2023.2 2023.04, Apr 11 2023
 13
@@ -22,174 +24,174 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z3 d/storage-home/a/afl5/elec-527/hw2/p3/Questa
+Z4 d/storage-home/a/afl5/elec-527/hw2/p3/Questa
 T_opt
 !s110 1713128427
 Vn6D[@S5A3XTX=oG8k=MAo3
 04 17 4 work top_module_win_tb fast 0
 =1-d09466164d60-661c43ea-bcc3b-1396ac
 R1
-Z4 !s12b OEM100
-Z5 !s124 OEM100
-Z6 o-quiet -auto_acc_if_foreign -work work -debugdb +acc
-Z7 tCvgOpt 0
+Z5 !s12b OEM100
+Z6 !s124 OEM100
+Z7 o-quiet -auto_acc_if_foreign -work work -debugdb +acc
+Z8 tCvgOpt 0
 n@_opt
-Z8 OL;O;2023.2;77
-T_opt1
-!s110 1708911213
-VTK_6f?idkPK?Wn=;Ek8m70
-Z9 04 13 4 work top_module_tb fast 0
-=1-3cfdfe22dd20-65dbea6c-d237f-357b93
-R1
+Z9 OL;O;2023.2;77
 R4
+T_opt1
+!s110 1713404863
+V`M3QLGM^ViHZmd@G70kbI2
+04 18 4 work top_module_lose_tb fast 0
+=1-d09466164d60-66207bbe-e21e1-1661ca
+R1
 R5
 R6
 R7
-n@_opt1
 R8
-R3
+n@_opt1
+R9
 T_opt2
 !s110 1710898035
 VjTJjBg;Z9nYFIgf;@YF]U3
-R9
+04 13 4 work top_module_tb fast 0
 =1-3cfdfe22dd20-65fa3b6f-53235-22b425
 R1
-R4
 R5
 R6
 R7
-n@_opt2
 R8
-R3
+n@_opt2
+R9
+R4
 vdp
 Z10 2dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_win.v|top_module.v
-!s110 1713128385
+Z11 !s110 1713404822
 !i10b 1
 !s100 gdWP6`a=M?^HeioElA@^C3
 I;NTBcD92X;;=bQHHN^U@D1
-Z11 d/storage-home/a/afl5/elec-527/ELEC_422_Minesweeper/Questa
-Z12 w1713127867
+Z12 d/storage-home/a/afl5/elec-527/ELEC_422_Minesweeper/Questa
+Z13 w1713127867
 8dp.v
 Fdp.v
-!i122 10
+!i122 11
 L0 8 138
-Z13 VDg1SIo80bB@j0V0VzS_@n1
-Z14 OL;L;2023.2;77
+Z14 VDg1SIo80bB@j0V0VzS_@n1
+Z15 OL;L;2023.2;77
 r1
 !s85 0
 31
-Z15 !s108 1713128385.000000
-Z16 !s107 top_module.v|testbench_win.v|testbench_lose.v|rng.v|main_FSM.v|dp.v|
-Z17 !s90 dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_win.v|top_module.v|
+Z16 !s108 1713404822.000000
+Z17 !s107 top_module.v|testbench_win.v|testbench_lose.v|rng.v|main_FSM.v|dp.v|
+Z18 !s90 dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_win.v|top_module.v|
 !i113 0
-Z18 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R7
+Z19 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
 vmain_FSM
 R10
-Z19 !s110 1713128386
+R11
 !i10b 1
 !s100 =>ioOSGB_6Q1nRjJmkU;13
 IkFA?6DkacOEnE60[kG1JJ3
-R11
+R12
 w1710896614
 Z20 8main_FSM.v
 Z21 Fmain_FSM.v
-!i122 10
+!i122 11
 L0 7 194
-R13
 R14
+R15
 r1
 !s85 0
 31
-R15
 R16
 R17
-!i113 0
 R18
-R7
+!i113 0
+R19
+R8
 nmain_@f@s@m
 vrng
 R10
-R19
+R11
 !i10b 1
 !s100 SP]j_ZXUQQeeEcn_bTdR43
 I@b>VBbGkAX9P`5ERbzj>j3
-R11
 R12
+R13
 8rng.v
 Frng.v
 R20
 R21
-!i122 10
+!i122 11
 L0 6 65
-R13
 R14
+R15
 r1
 !s85 0
 31
-R15
 R16
 R17
-!i113 0
 R18
-R7
+!i113 0
+R19
+R8
 vtop_module
 R10
-R19
+R11
 !i10b 1
 !s100 IF>4o]kXk9;mRg8>Z?2PR2
 I7zG3HHdf;dWe6HPRnNi>i1
-R11
 R12
+R13
 8top_module.v
 Ftop_module.v
 R20
 R21
-!i122 10
+!i122 11
 L0 7 102
-R13
 R14
+R15
 r1
 !s85 0
 31
-R15
 R16
 R17
-!i113 0
 R18
-R7
+!i113 0
+R19
+R8
 vtop_module_lose_tb
 R10
-R19
+R11
 !i10b 1
 !s100 e^ekWL^BUnAzOdi2Cfg3f0
 I8am:?i>OIafj]9^co_g3h3
-R11
 R12
+R13
 8testbench_lose.v
 Ftestbench_lose.v
 R20
 R21
-!i122 10
+!i122 11
 Z22 L0 8 359
-R13
 R14
+R15
 r1
 !s85 0
 31
-R15
 R16
 R17
-!i113 0
 R18
-R7
+!i113 0
+R19
+R8
 vtop_module_tb
 2dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_top.v|testbench_win.v|top_module.v
 !s110 1713127882
 !i10b 1
 !s100 5FUG23XZP^QK<OHQbR8gn2
 IU=>8loENeP;j4LYIjH2Kc0
-R11
+R12
 w1710897985
 8testbench_top.v
 Ftestbench_top.v
@@ -197,8 +199,8 @@ R20
 R21
 !i122 8
 R22
-R13
 R14
+R15
 r1
 !s85 0
 31
@@ -206,30 +208,30 @@ r1
 !s107 top_module.v|testbench_win.v|testbench_top.v|testbench_lose.v|rng.v|main_FSM.v|dp.v|
 !s90 dp.v|main_FSM.v|rng.v|testbench_lose.v|testbench_top.v|testbench_win.v|top_module.v|
 !i113 0
-R18
-R7
+R19
+R8
 vtop_module_win_tb
 R10
-R19
+R11
 !i10b 1
 !s100 i7C2VWo>:XWZX`cTH7aL:3
 IC70CZaW9S?>9l@>Nagz_Y3
-R11
 R12
+R13
 8testbench_win.v
 Ftestbench_win.v
 R20
 R21
-!i122 10
+!i122 11
 L0 8 203
-R13
 R14
+R15
 r1
 !s85 0
 31
-R15
 R16
 R17
-!i113 0
 R18
-R7
+!i113 0
+R19
+R8
