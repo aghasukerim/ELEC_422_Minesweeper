@@ -1,13 +1,18 @@
 NOTE: All "I/O Pin Number" designations are as listed in the file "Custom_64_pin_Padframe.jpg" 
-      available in the "Project_Final_Report" assignment in the ELEC 422 (Spring 2024) Canvas page.
-For instance, I/O pin 1 is located in the Magic subcell titled "PadBiDir 17_21". Furthermore,
-I/O pin 2 is located in the Magic subcell titled "PadBiDir 17_20" , and so on.
+        available in the "Project_Final_Report" assignment in the ELEC 422 (Spring 2024) Canvas page.
+      For instance, I/O pin 1 is located in the Magic subcell titled "PadBiDir 17_21". Furthermore,
+        I/O pin 2 is located in the Magic subcell titled "PadBiDir 17_20" , and so on.
+NOTE: "Direction" values are of the format "input/output {bit number or index assignment}". 
+       All signals with "direction" values lacking an explicit specification for the amount of 
+        bits are assumed to be 1-bit signals.
+
+
                                                  
 | I/O Pin|    Signal Name    |     Direction     |
 | Number |                   |                   |
 |--------|-------------------|-------------------|
 | 1      | out_global_score  | output [31:0]     |
-| 2      |                   |                   |
+| 2      | out_win           | output            |
 | 3      |                   |                   |
 | 4      |                   |                   |
 | 5      |                   |                   |
