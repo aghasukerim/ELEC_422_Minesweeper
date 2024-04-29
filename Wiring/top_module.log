@@ -1,25 +1,3 @@
-| (command line,1): p_in_mult: No such node or vector
-| (command line,1): p_in_incr: No such node or vector
-| (command line,1): out_state_main: No such node or vector
-| (command line,1): p_out_state_main: No such node or vector
-| (command line,1): out_start: No such node or vector
-| (command line,1): out_place_done: No such node or vector
-| (command line,1): out_load: No such node or vector
-| (command line,1): out_decode: No such node or vector
-| (command line,1): out_mines: No such node or vector
-| (command line,1): out_temp_data_in: No such node or vector
-| (command line,1): out_alu: No such node or vector
-| (command line,1): out_alu_done: No such node or vector
-| (command line,1): out_global_score: No such node or vector
-| (command line,1): out_temp_decoded: No such node or vector
-| (command line,1): p_out_global_score: No such node or vector
-| (command line,1): cleared_map: No such node or vector
-| (command line,1): out_display: No such node or vector
-| (command line,1): out_display_done: No such node or vector
-| (command line,1): out_temp_index: No such node or vector
-| (command line,1): out_temp_mine_cnt: No such node or vector
-| (command line,1): p_in_mult: No such node or vector
-| (command line,1): p_in_incr: No such node or vector
 | time = 40.000ns
 | time = 40.000ns
 | time = 80.000ns
