@@ -4,7 +4,7 @@ NOTE: All "I/O Pin Number" designations are as listed in the file "Custom_64_pin
 | I/O Pin|    Signal Name    |     Direction     |
 | Number |                   |                   |
 |--------|-------------------|-------------------|
-| 1      | out_global_score  | output            |
+| 1      | out_global_score  | output [31:0]     |
 | 2      |                   |                   |
 | 3      |                   |                   |
 | 4      |                   |                   |
