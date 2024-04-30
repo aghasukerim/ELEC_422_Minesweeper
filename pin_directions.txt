@@ -30,12 +30,12 @@ NOTE: A signal with the value "none" for its "Signal Name" refers to an empty I/
 | 16     | out_temp_cleared[9] || output         |
 | 17     | out_temp_cleared[10]|| output         |
 | 18     | out_temp_cleared[11]|| output         |
-| 19     |                   |                   |
-| 20     |                   |                   |
-| 21     |                   |                   |
-| 22     |                   |                   |
-| 23     |                   |                   |
-| 24     |                   |                   |
+| 19     | out_temp_cleared[12]|| output         |
+| 20     | out_temp_cleared[23]|| output         |
+| 21     | out_temp_cleared[13]|| output         |
+| 22     | out_temp_cleared[14]|| output         |       
+| 23     | out_temp_cleared[22]|| output         | 
+| 24     | out_temp_cleared[20]|| output         |
 | 25     |                   |                   |
 | 26     | GND               | n/a               |
 | 27     |                   |                   |
