@@ -40,23 +40,23 @@ NOTE: A signal with the value "none" for its "Signal Name" refers to an empty I/
 | 26     | GND               | n/a               |
 | 27     | in_incr[2]        | input             |
 | 28     | in_incr[1]        | input             |
-| 29     |                   |                   |
-| 30     |                   |                   |
-| 31     |                   |                   |
+| 29     | in_mult[2]        | input             |
+| 30     | in_mult[1]        | input             |
+| 31     | in_mult[0]        | input             |
 | 32     | GND               | n/a               |
-| 33     |                   |                   |
-| 34     |                   |                   |
-| 35     |                   |                   |
-| 36     |                   |                   |
-| 37     |                   |                   |
-| 38     |                   |                   |
-| 39     |                   |                   |
-| 40     |                   |                   |
-| 41     |                   |                   |
+| 33     | out_temp_cleared[19]|| output         |
+| 34     | out_temp_cleared[18]|| output         |
+| 35     | out_temp_cleared[15]|| output         |
+| 36     | out_temp_cleared[17]|| output         |
+| 37     | out_temp_cleared[16]|| output         |
+| 38     | in_incr[0]        | input             |
+| 39     | in_mines_num[1]   | input             |
+| 40     | in_mines_num[0]   | input             |
+| 41     | in_n_mines        | input             |
 | 42     | VDD               | n/a               |
-| 43     |                   |                   |
-| 44     |                   |                   |
-| 45     |                   |                   |
+| 43     | in_clkb           | input             |
+| 44     | in_data[2]        | input             |
+| 45     | in_data[1]        | input             |
 | 46     |                   |                   |
 | 47     |                   |                   |
 | 48     | VDD               | n/a               |
