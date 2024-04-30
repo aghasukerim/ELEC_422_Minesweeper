@@ -25,11 +25,11 @@ NOTE: A signal with the value "none" for its "Signal Name" refers to an empty I/
 | 11     | out_temp_cleared[5] || output         |
 | 12     | out_temp_cleared[6] || output         |
 | 13     | out_temp_cleared[7] || output         |
-| 14     |                   |                   |
+| 14     | out_temp_cleared[8] || output         |
 | 15     | VDD               | n/a               |
-| 16     |                   |                   |
-| 17     |                   |                   |
-| 18     |                   |                   |
+| 16     | out_temp_cleared[9] || output         |
+| 17     | out_temp_cleared[10]|| output         |
+| 18     | out_temp_cleared[11]|| output         |
 | 19     |                   |                   |
 | 20     |                   |                   |
 | 21     |                   |                   |
