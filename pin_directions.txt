@@ -15,7 +15,7 @@ NOTE: A signal with the value "none" for its "Signal Name" refers to an empty I/
 | 1      | out_global_score[1] || output         |
 | 2      | out_win           | output            |
 | 3      | out_global_score[0] || output         |                   
-| 4      | none              | input             |
+| 4      | in_clka           | input             |
 | 5      | out_temp_cleared[4] || output         |
 | 6      | out_temp_cleared[3] || output         |
 | 7      | out_temp_cleared[0] || output         |
