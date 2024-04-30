@@ -1,0 +1,16 @@
+calculating total polysilicon area...
+====================================================
+Total PolySilicon Area = 10726021 lambda squared
+given 6800 x 6800 area, total poly density = 23.19641 percent
+Local polysilicon density = 23.19641 percent 
+====================================================
+calculating total metal1 area...
+====================================================
+Total Metal1 Area = 16168991 lambda squared
+given 6800 x 6800 area, total metal1 density = 34.96754 percent
+====================================================
+calculating total metal2 area...
+====================================================
+Total Metal2 Area = 13894734 lambda squared
+given 6800 x 6800 area, total metal2 density = 30.04917 percent
+====================================================

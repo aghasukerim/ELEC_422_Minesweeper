@@ -1,0 +1,6 @@
+calculating total polysilicon area...
+====================================================
+Total PolySilicon Area = 2053611 lambda squared
+given 6800 x 6800 area, total poly density = 4.44120 percent
+Local polysilicon density = 4.44120 percent 
+====================================================
