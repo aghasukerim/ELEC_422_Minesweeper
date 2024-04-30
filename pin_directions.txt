@@ -74,5 +74,5 @@ NOTE: A signal with the value "none" for its "Signal Name" refers to an empty I/
 | 60     | out_n_nearby[0]   | output            |
 | 61     | out_global_score[4] || output         |
 | 62     | out_global_score[3] || output         |
-| 63     |                   |                   |
+| 63     | out_global_score[2] || output         |
 | 64     | GND               | n/a               |
