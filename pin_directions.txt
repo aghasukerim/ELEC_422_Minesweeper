@@ -11,9 +11,9 @@ NOTE: "Direction" values are of the format "input/output {bit number or index as
 | I/O Pin|    Signal Name    |     Direction     |
 | Number |                   |                   |
 |--------|-------------------|-------------------|
-| 1      | out_global_score  | output [31:0]     |
+| 1      | out_global_score[1] || output         |
 | 2      | out_win           | output            |
-| 3      |                   |                   |
+| 3      | out_global_score[0] || output         |                   
 | 4      |                   |                   |
 | 5      |                   |                   |
 | 6      |                   |                   |
