@@ -67,12 +67,12 @@ NOTE: A signal with the value "none" for its "Signal Name" refers to an empty I/
 | 53     | in_restart        | input             |
 | 54     | out_global_score[6] || output         |
 | 55     | out_global_score[5] || output         |
-| 56     |                   |                   |
-| 57     |                   |                   |
+| 56     | out_gameover      | output            |
+| 57     | out_n_nearby[1]   | output            |
 | 58     | GND               | n/a               |
-| 59     |                   |                   |
-| 60     |                   |                   |
-| 61     |                   |                   |
-| 62     |                   |                   |
+| 59     | out_global_score[7] || output         |
+| 60     | out_n_nearby[0]   | output            |
+| 61     | out_global_score[4] || output         |
+| 62     | out_global_score[3] || output         |
 | 63     |                   |                   |
 | 64     | GND               | n/a               |
