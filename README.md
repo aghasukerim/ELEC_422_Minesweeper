@@ -14,9 +14,9 @@
         VLSI design of an ASIC chip for the Minesweeper game.
     <br />
     <br />
-    ![test](https://github.com/aghasukerim/ELEC_422_Minesweeper/blob/main/docs/final_layout.png?raw=true)
+ <img src="docs/final_layout.png" alt="Final Chip Layout" > 
+  
   </p>
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -37,7 +37,6 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
 
 
 <!-- ABOUT THE PROJECT -->
