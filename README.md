@@ -14,7 +14,7 @@
         VLSI design of an ASIC chip for the Minesweeper game.
     <br />
     <br />
-    [final-layout]
+    ![test](https://github.com/aghasukerim/ELEC_422_Minesweeper/blob/main/docs/final_layout.png?raw=true)
   </p>
 
 
@@ -115,4 +115,3 @@ Alexis Le Glaunec - alexis.leglaunec@rice.edu
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/alexis51151/SAT-DPLL.svg?style=for-the-badge
 [license-url]: https://github.com/alexis51151/SAT-DPLL/blob/master/LICENSE.md
-[final-layout]: docs/final_layout.png
