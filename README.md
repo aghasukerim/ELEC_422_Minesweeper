@@ -75,6 +75,7 @@ The project was successfully run and tested on Red Hat 8 (CLEAR server).
 ```
 
 ## Testing
+We use the `lose.cmd` and `p_lose.cmd` irsim command files for the lose scenario; the `win.cmd` and `p_win.cmd` for the win scenario.
 
 ### Lose scenario
 In the lose scenario, we complete one game (where we lose) at level 3 (i.e. 3 mines in the 5x5 board) and start a new game at level 2 (i.e. 2 mines).  
